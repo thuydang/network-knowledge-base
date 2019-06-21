@@ -1,0 +1,1598 @@
+@prefix : <http://open-multinet.info/ontology/omn-lifecycle#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix omn: <http://open-multinet.info/ontology/omn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix omn-resource: <http://open-multinet.info/ontology/omn-resource#> .
+
+<http://open-multinet.info/ontology/omn-lifecycle> a owl:Ontology ;
+	dc:publisher <http://open-multinet.info/> ;
+	dcterms:modified "2015-10-22"^^xsd:date ;
+	dc:contributor <mailto:ibaldin@renci.org> ;
+	dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+	dc:contributor <mailto:yahya.al-hazmi@tu-berlin.de> ;
+	dc:description "This ontology defines generic concepts related to the life cycle of resource or service."@en ;
+	cc:license <http://creativecommons.org/licenses/by/4.0/> ;
+	dc:contributor <https://staff.fnwi.uva.nl/p.grosso> ;
+	dc:date "2014-11-11"^^xsd:date ;
+	dc:description <https://raw.githubusercontent.com/open-multinet/playground-rspecs-ontology/master/ontologies/pics/omn-lifecycle.png> ;
+	dc:rights "This ontology is distributed under a Creative Commons Attribute License - http://creativecommons.org/licenses/by/4.0/"@en ;
+	dc:contributor <mailto:yxin@renci.org> ;
+	dc:title "Open-Multinet Upper Lifecycle Ontology"@en ;
+	dc:contributor <mailto:loughnane@campus.tu-berlin.de> ;
+	dc:creator <http://alex.willner.ws/about#me> ;
+	dc:contributor <http://www.commit-nl.nl/people/morsey> , <mailto:jorge.lopez_vergara@uam.es> ;
+	rdfs:comment "This ontology addresses parts of the resource lifecycle, to do with offering, provisioning and allocating resources."@en ;
+	vann:preferredNamespacePrefix "omn-lifecycle"^^xsd:string ;
+	dc:contributor <http://users.ntua.gr/c.papagianni> , <mailto:brecht.vermeulen@iminds.be> ;
+	rdfs:label "omn-lifecycle"@en ;
+	vann:preferredNamespaceUri <http://open-multinet.info/ontology/omn-lifecycle#> ;
+	dc:contributor <mailto:thijs.walcarius@intec.ugent.be> ;
+	owl:versionInfo "2015-10-22"^^xsd:string .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn#hasReservation
+
+omn:hasReservation a owl:ObjectProperty .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#canBeImplementedBy
+
+:canBeImplementedBy a owl:ObjectProperty ;
+	owl:inverseOf :canImplement ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:canBeImplementedBy rdfs:range _:genid6 .
+
+_:genid6 a owl:Class ;
+	owl:unionOf _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:canBeImplementedBy rdfs:comment "That which is not currently implemented, but can potentially be implemented by a resource, service, component or group."@en ;
+	rdfs:label "can be implemented by"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#canImplement
+
+:canImplement a owl:ObjectProperty ;
+	rdfs:domain _:genid11 .
+
+_:genid11 a owl:Class ;
+	owl:unionOf _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:canImplement rdfs:range _:genid16 .
+
+_:genid16 a owl:Class ;
+	owl:unionOf _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid19 .
+
+_:genid19 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid17 .
+
+_:genid17 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:canImplement rdfs:comment "That which does not currently implement, but can potentially implement a resource, service, component or group."@en ;
+	rdfs:label "can implement"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#childOf
+
+:childOf a owl:ObjectProperty ;
+	owl:inverseOf :parentOf ;
+	rdfs:domain _:genid21 .
+
+_:genid21 a owl:Class ;
+	owl:unionOf _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid24 .
+
+_:genid24 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:childOf rdfs:range _:genid26 .
+
+_:genid26 a owl:Class ;
+	owl:unionOf _:genid30 .
+
+_:genid30 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid27 .
+
+_:genid27 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:childOf rdfs:comment "A resource, component, group or serice which is a part of another."@en ;
+	rdfs:label "child of"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasAction
+
+:hasAction a owl:ObjectProperty ;
+	rdfs:domain :State ;
+	rdfs:range :Action ;
+	rdfs:comment "action of a state of a GENI operational state machine"@en ;
+	rdfs:label "has action"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasLease
+
+:hasLease a owl:ObjectProperty ;
+	rdfs:subPropertyOf omn:hasReservation ;
+	rdfs:domain _:genid31 .
+
+_:genid31 a owl:Class ;
+	owl:unionOf _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first :Group .
+
+:Group a owl:Class .
+
+_:genid34 rdf:rest _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first :Resource .
+
+:Resource a owl:Class .
+
+_:genid33 rdf:rest _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first :Service .
+
+:Service a owl:Class .
+
+_:genid32 rdf:rest rdf:nil .
+
+:hasLease rdfs:range :Lease ;
+	rdfs:comment "the lease"@en ;
+	rdfs:label "has lease"@en ;
+	rdfs:seeAlso <http://nitlab.inf.uth.gr/schema/sfa/rspec/1> .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasNext
+
+:hasNext a owl:ObjectProperty ;
+	rdfs:domain :State ;
+	rdfs:range :State ;
+	rdfs:comment "next state of a GENI operational state machine"@en ;
+	rdfs:label "has next state"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasReservationState
+
+:hasReservationState a owl:ObjectProperty ;
+	owl:inverseOf :isReservationStateOf ;
+	a owl:FunctionalProperty , owl:IrreflexiveProperty ;
+	rdfs:domain omn:Reservation ;
+	rdfs:range :ReservationState ;
+	rdfs:comment "The state of the reservation."@en ;
+	rdfs:label "has Reservation State"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasStartState
+
+:hasStartState a owl:ObjectProperty ;
+	rdfs:domain :Opstate ;
+	rdfs:range :State ;
+	rdfs:comment "start state of a GENI operational state machine"@en ;
+	rdfs:label "has start state"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasState
+
+:hasState a owl:ObjectProperty ;
+	owl:inverseOf :isStateOf ;
+	a owl:FunctionalProperty , owl:IrreflexiveProperty ;
+	rdfs:domain _:genid35 .
+
+_:genid35 a owl:Class ;
+	owl:unionOf _:genid39 .
+
+_:genid39 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid38 .
+
+_:genid38 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid36 .
+
+_:genid36 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasState rdfs:range :State ;
+	rdfs:comment "Has state."@en ;
+	rdfs:label "has State"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasStateName
+
+:hasStateName a owl:ObjectProperty ;
+	rdfs:domain :State ;
+	rdfs:range :State ;
+	rdfs:comment "state name of a GENI operational state machine"@en ;
+	rdfs:label "has state name"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasType
+
+:hasType a owl:ObjectProperty ;
+	rdfs:domain :State ;
+	rdfs:range :State ;
+	rdfs:comment "state type of a GENI operational state machine"@en ;
+	rdfs:label "has state type"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasWait
+
+:hasWait a owl:ObjectProperty ;
+	rdfs:domain :State ;
+	rdfs:range :Wait ;
+	rdfs:comment "wait of a state of a GENI operational state machine"@en ;
+	rdfs:label "has wait"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#implementedBy
+
+:implementedBy a owl:ObjectProperty ;
+	owl:inverseOf :implements ;
+	rdfs:domain _:genid40 .
+
+_:genid40 a owl:Class ;
+	owl:unionOf _:genid44 .
+
+_:genid44 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid43 .
+
+_:genid43 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid42 .
+
+_:genid42 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid41 .
+
+_:genid41 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:implementedBy rdfs:range _:genid45 .
+
+_:genid45 a owl:Class ;
+	owl:unionOf _:genid49 .
+
+_:genid49 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid48 .
+
+_:genid48 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid47 .
+
+_:genid47 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid46 .
+
+_:genid46 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:implementedBy rdfs:comment "Implementd by."@en ;
+	rdfs:label "implementd by."@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#implements
+
+:implements a owl:ObjectProperty ;
+	rdfs:domain _:genid50 .
+
+_:genid50 a owl:Class ;
+	owl:unionOf _:genid54 .
+
+_:genid54 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid53 .
+
+_:genid53 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid52 .
+
+_:genid52 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid51 .
+
+_:genid51 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:implements rdfs:range _:genid55 .
+
+_:genid55 a owl:Class ;
+	owl:unionOf _:genid59 .
+
+_:genid59 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid57 .
+
+_:genid57 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid56 .
+
+_:genid56 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:implements rdfs:comment "Implements."@en ;
+	rdfs:label "implements"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#isReservationStateOf
+
+:isReservationStateOf a owl:ObjectProperty ;
+	rdfs:domain :ReservationState ;
+	rdfs:range omn:Reservation ;
+	rdfs:comment "is reservation state of"@en ;
+	rdfs:label "is reservation state of"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#isStateOf
+
+:isStateOf a owl:ObjectProperty ;
+	rdfs:domain :State ;
+	rdfs:range _:genid60 .
+
+_:genid60 a owl:Class ;
+	owl:unionOf _:genid64 .
+
+_:genid64 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid63 .
+
+_:genid63 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid62 .
+
+_:genid62 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid61 .
+
+_:genid61 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:isStateOf rdfs:comment "is state of"@en ;
+	rdfs:label "is state of"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#managedBy
+
+:managedBy a owl:ObjectProperty ;
+	rdfs:domain _:genid65 .
+
+_:genid65 a owl:Class ;
+	owl:unionOf _:genid68 .
+
+_:genid68 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid67 .
+
+_:genid67 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid66 .
+
+_:genid66 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:managedBy rdfs:range omn:Service ;
+	rdfs:comment "URI of service (e.g. AggregateManager) that manages the instantiation of childs of a resource"@en ;
+	rdfs:label "managed by"@en ;
+	rdfs:seeAlso "GENI RSpec v3: component_manager_id"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#parentOf
+
+:parentOf a owl:ObjectProperty ;
+	rdfs:domain _:genid69 .
+
+_:genid69 a owl:Class ;
+	owl:unionOf _:genid73 .
+
+_:genid73 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid72 .
+
+_:genid72 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid71 .
+
+_:genid71 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid70 .
+
+_:genid70 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:parentOf rdfs:range _:genid74 .
+
+_:genid74 a owl:Class ;
+	owl:unionOf _:genid78 .
+
+_:genid78 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid77 .
+
+_:genid77 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid76 .
+
+_:genid76 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid75 .
+
+_:genid75 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:parentOf rdfs:comment "A resource, component, group or serice which encompasses another."@en ;
+	rdfs:label "parent of"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#serviceIsUsedBy
+
+:serviceIsUsedBy a owl:ObjectProperty ;
+	owl:inverseOf :usesService ;
+	a owl:IrreflexiveProperty ;
+	rdfs:domain omn:Service ;
+	rdfs:range _:genid79 .
+
+_:genid79 a owl:Class ;
+	owl:unionOf _:genid83 .
+
+_:genid83 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid82 .
+
+_:genid82 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid81 .
+
+_:genid81 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid80 .
+
+_:genid80 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:serviceIsUsedBy rdfs:comment "a service is used by."@en ;
+	rdfs:label "service is used by"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#usesService
+
+:usesService a owl:ObjectProperty , owl:IrreflexiveProperty ;
+	rdfs:domain _:genid84 .
+
+_:genid84 a owl:Class ;
+	owl:unionOf _:genid88 .
+
+_:genid88 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid87 .
+
+_:genid87 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid86 .
+
+_:genid86 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid85 .
+
+_:genid85 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:usesService rdfs:range omn:Service ;
+	rdfs:comment "Uses a service."@en ;
+	rdfs:label "uses Service"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#creationTime
+
+:creationTime a owl:DatatypeProperty ;
+	rdfs:domain _:genid89 .
+
+_:genid89 a owl:Class ;
+	owl:unionOf _:genid91 .
+
+_:genid91 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid90 .
+
+_:genid90 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:creationTime rdfs:range xsd:dateTime ;
+	rdfs:comment "GENI sliver info creation time"@en ;
+	rdfs:label "has creation time"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#creator
+
+:creator a owl:DatatypeProperty ;
+	rdfs:domain _:genid92 .
+
+_:genid92 a owl:Class ;
+	owl:unionOf _:genid94 .
+
+_:genid94 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid93 .
+
+_:genid93 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:creator rdfs:range xsd:string ;
+	rdfs:comment "GENI sliver info creator URN"@en ;
+	rdfs:label "has creator URN"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#expirationTime
+
+:expirationTime a owl:DatatypeProperty ;
+	rdfs:domain _:genid95 .
+
+_:genid95 a owl:Class ;
+	owl:unionOf _:genid98 .
+
+_:genid98 a rdf:List ;
+	rdf:first omn:Group ;
+	rdf:rest _:genid97 .
+
+_:genid97 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid96 .
+
+_:genid96 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:expirationTime rdfs:range xsd:dateTime ;
+	rdfs:comment "GENI sliver info expiration time"@en ;
+	rdfs:label "has expiration time"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasAuthenticationInformation
+
+:hasAuthenticationInformation a owl:DatatypeProperty ;
+	rdfs:domain _:genid99 .
+
+_:genid99 a owl:Class ;
+	owl:unionOf _:genid101 .
+
+_:genid101 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid100 .
+
+_:genid100 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasAuthenticationInformation rdfs:range xsd:string ;
+	rdfs:comment "A specific authentification information for the management system"@en ;
+	rdfs:label "has authentication information"@en ;
+	rdfs:seeAlso "GENI Slice X.509 certificates"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasComponentID
+
+:hasComponentID a owl:DatatypeProperty ;
+	rdfs:domain _:genid102 .
+
+_:genid102 a owl:Class ;
+	owl:unionOf _:genid105 .
+
+_:genid105 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid104 .
+
+_:genid104 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid103 .
+
+_:genid103 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasComponentID rdfs:range xsd:anyURI ;
+	rdfs:comment "A unique identifier set by the management system"@en ;
+	rdfs:label "has component ID"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: component_id"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasComponentManagerID
+
+:hasComponentManagerID a owl:DatatypeProperty ;
+	rdfs:domain _:genid106 .
+
+_:genid106 a owl:Class ;
+	owl:unionOf _:genid109 .
+
+_:genid109 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid108 .
+
+_:genid108 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid107 .
+
+_:genid107 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasComponentManagerID rdfs:range xsd:anyURI ;
+	rdfs:comment "A unique identifier set by the management system"@en ;
+	rdfs:label "has component manager ID"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: component_manager_id"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasComponentManagerName
+
+:hasComponentManagerName a owl:DatatypeProperty ;
+	rdfs:domain _:genid110 .
+
+_:genid110 a owl:Class ;
+	owl:unionOf _:genid113 .
+
+_:genid113 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid112 .
+
+_:genid112 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid111 .
+
+_:genid111 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasComponentManagerName rdfs:range xsd:anyURI ;
+	rdfs:comment "has component manager name"@en ;
+	rdfs:label "has component manager name"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: component_manager"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasComponentName
+
+:hasComponentName a owl:DatatypeProperty ;
+	rdfs:domain _:genid114 .
+
+_:genid114 a owl:Class ;
+	owl:unionOf _:genid117 .
+
+_:genid117 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid116 .
+
+_:genid116 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid115 .
+
+_:genid115 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasComponentName rdfs:range xsd:string ;
+	rdfs:comment "has component name"@en ;
+	rdfs:label "has component name"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: component_name"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasID
+
+:hasID a owl:DatatypeProperty ;
+	rdfs:domain _:genid118 .
+
+_:genid118 a owl:Class ;
+	owl:unionOf _:genid122 .
+
+_:genid122 a rdf:List ;
+	rdf:first omn:Reservation ;
+	rdf:rest _:genid121 .
+
+_:genid121 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid120 .
+
+_:genid120 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest _:genid119 .
+
+_:genid119 a rdf:List ;
+	rdf:first omn-resource:Location .
+
+omn-resource:Location a owl:Class .
+
+_:genid119 rdf:rest rdf:nil .
+
+:hasID rdfs:range xsd:string ;
+	rdfs:comment "A unique identifier set by the management system"@en ;
+	rdfs:label "has ID"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasIdRef
+
+:hasIdRef a owl:DatatypeProperty ;
+	rdfs:domain _:genid123 .
+
+_:genid123 a owl:Class ;
+	owl:unionOf _:genid127 .
+
+_:genid127 a rdf:List ;
+	rdf:first omn:Reservation ;
+	rdf:rest _:genid126 .
+
+_:genid126 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid125 .
+
+_:genid125 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest _:genid124 .
+
+_:genid124 a rdf:List ;
+	rdf:first omn-resource:Location ;
+	rdf:rest rdf:nil .
+
+:hasIdRef rdfs:range xsd:string ;
+	rdfs:comment "Refers to a unique identifier set by the management system"@en ;
+	rdfs:label "has XSD ID reference"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasOriginalID
+
+:hasOriginalID a owl:DatatypeProperty ;
+	rdfs:domain _:genid128 .
+
+_:genid128 a owl:Class ;
+	owl:unionOf _:genid130 .
+
+_:genid130 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid129 .
+
+_:genid129 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasOriginalID rdfs:range xsd:string ;
+	rdfs:comment "The original identifier set by the management system"@en ;
+	rdfs:label "has original component ID"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: component_id"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasRole
+
+:hasRole a owl:DatatypeProperty ;
+	rdfs:domain _:genid131 .
+
+_:genid131 a owl:Class ;
+	owl:unionOf _:genid133 .
+
+_:genid133 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid132 .
+
+_:genid132 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasRole rdfs:range xsd:string ;
+	rdfs:comment "has role"@en ;
+	rdfs:label "has role"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: role"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasSliceID
+
+:hasSliceID a owl:DatatypeProperty ;
+	rdfs:domain _:genid134 .
+
+_:genid134 a owl:Class ;
+	owl:unionOf _:genid137 .
+
+_:genid137 a rdf:List ;
+	rdf:first omn:Reservation ;
+	rdf:rest _:genid136 .
+
+_:genid136 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid135 .
+
+_:genid135 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasSliceID rdfs:range xsd:string ;
+	rdfs:comment "has slice ID"@en ;
+	rdfs:label "has slice ID"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: node > slice_id"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasSliverID
+
+:hasSliverID a owl:DatatypeProperty ;
+	rdfs:domain _:genid138 .
+
+_:genid138 a owl:Class ;
+	owl:unionOf _:genid140 .
+
+_:genid140 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid139 .
+
+_:genid139 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasSliverID rdfs:range xsd:string ;
+	rdfs:comment "has sliver ID"@en ;
+	rdfs:label "has sliver ID"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: node > sliver_id"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasSliverName
+
+:hasSliverName a owl:DatatypeProperty ;
+	rdfs:domain _:genid141 .
+
+_:genid141 a owl:Class ;
+	owl:unionOf _:genid143 .
+
+_:genid143 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid142 .
+
+_:genid142 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasSliverName rdfs:range xsd:string ;
+	rdfs:comment "has sliver name"@en ;
+	rdfs:label "has sliver name"@en ;
+	rdfs:seeAlso "GENI Manifest RSpec v3: sliver_type name"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#project
+
+:project a owl:DatatypeProperty ;
+	rdfs:domain omn:Topology ;
+	rdfs:range xsd:string ;
+	rdfs:comment "topology belongs to related project"@en ;
+	rdfs:label "project"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#resourceId
+
+:resourceId a owl:DatatypeProperty ;
+	rdfs:domain _:genid144 .
+
+_:genid144 a owl:Class ;
+	owl:unionOf _:genid146 .
+
+_:genid146 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid145 .
+
+_:genid145 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:resourceId rdfs:range xsd:string ;
+	rdfs:comment "GENI sliver info resource ID"@en ;
+	rdfs:label "has resource ID"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#startTime
+
+:startTime a owl:DatatypeProperty ;
+	rdfs:domain _:genid147 .
+
+_:genid147 a owl:Class ;
+	owl:unionOf _:genid149 .
+
+_:genid149 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid148 .
+
+_:genid148 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:startTime rdfs:range xsd:dateTime ;
+	rdfs:comment "GENI sliver info start time"@en ;
+	rdfs:label "has start time"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn#Attribute
+
+omn:Attribute a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Component
+
+omn:Component a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Group
+
+omn:Group a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Reservation
+
+omn:Reservation a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Resource
+
+omn:Resource a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Service
+
+omn:Service a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Topology
+
+omn:Topology a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Action
+
+:Action a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "GENI state action"@en ;
+	rdfs:label "Action"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Active
+
+:Active a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Allocated
+
+:Allocated a owl:Class ;
+	rdfs:subClassOf :ReservationState .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Cleaned
+
+:Cleaned a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Confirmation
+
+:Confirmation a owl:Class ;
+	rdfs:subClassOf omn:Topology ;
+	rdfs:comment "A collection (group) of resources/services/groups confirmed to be allocated for the user."@en ;
+	rdfs:label "Confirmation"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Error
+
+:Error a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Failure
+
+:Failure a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_failure"@en ;
+	rdfs:label "Failure"@en ;
+	rdfs:seeAlso "GENI geni_failure operational state"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Group
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Initialized
+
+:Initialized a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Installed
+
+:Installed a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Lease
+
+:Lease a owl:Class ;
+	rdfs:subClassOf omn:Reservation ;
+	rdfs:comment "A collection (group) of resources/services/groups allocated for the user."@en ;
+	rdfs:label "Lease"@en ;
+	rdfs:seeAlso <http://nitlab.inf.uth.gr/schema/sfa/rspec/1> .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Manifest
+
+:Manifest a owl:Class ;
+	rdfs:subClassOf omn:Topology ;
+	rdfs:comment "A collection (group) of resources/services/groups allocated for the user."@en ;
+	rdfs:label "Manifest"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Nascent
+
+:Nascent a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:label "Nascent"@en ;
+	rdfs:seeAlso "GENI Nascent operational state"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#NotReady
+
+:NotReady a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:label "Not Ready"@en ;
+	rdfs:seeAlso "GENI geni_notready operational state"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#NotYetInitialized
+
+:NotYetInitialized a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Offering
+
+:Offering a owl:Class ;
+	rdfs:subClassOf omn:Topology ;
+	rdfs:comment "A collection (group) of services and resources provided by an Infrastructure. The collection is the result of the application of Policies."@en ;
+	rdfs:label "Offering"@en ;
+	rdfs:seeAlso gr:Offering .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Opstate
+
+:Opstate a owl:Class ;
+	rdfs:subClassOf omn:Resource ;
+	rdfs:label "GENI operational state machine"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Pending
+
+:Pending a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Preinit
+
+:Preinit a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Provisioned
+
+:Provisioned a owl:Class ;
+	rdfs:subClassOf :ReservationState .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Ready
+
+:Ready a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Reload
+
+:Reload a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_reload"@en ;
+	rdfs:label "Reload"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Removing
+
+:Removing a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Request
+
+:Request a owl:Class ;
+	rdfs:subClassOf omn:Topology ;
+	rdfs:comment "A collection (group) of resources/services/groups requested by the user"@en ;
+	rdfs:label "Request"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#ReservationState
+
+:ReservationState a owl:Class ;
+	rdfs:subClassOf omn:Attribute ;
+	rdfs:comment "The current state of a reservation"@en ;
+	rdfs:label "Reservation State"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Resource
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Restart
+
+:Restart a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_restart"@en ;
+	rdfs:label "Restart"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Service
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Start
+
+:Start a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_start"@en ;
+	rdfs:label "Start"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Started
+
+:Started a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#State
+
+:State a owl:Class ;
+	rdfs:subClassOf omn:Attribute ;
+	rdfs:comment "The current state of the resource, service or group"@en ;
+	rdfs:label "State"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Stop
+
+:Stop a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_stop"@en ;
+	rdfs:label "Stop"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Stopped
+
+:Stopped a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Stopping
+
+:Stopping a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Success
+
+:Success a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_success"@en ;
+	rdfs:label "Success"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Unallocated
+
+:Unallocated a owl:Class ;
+	rdfs:subClassOf :ReservationState .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Uncompleted
+
+:Uncompleted a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Unknown
+
+:Unknown a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "The related resource/service is currently in an unknown state"@en ;
+	rdfs:label "Unknown"@en ;
+	rdfs:seeAlso "GENI operational state in general"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#UpdateUsers
+
+:UpdateUsers a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_update_users"@en ;
+	rdfs:label "UpdateUsers"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#UpdateUsersCancel
+
+:UpdateUsersCancel a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_update_users_cancel"@en ;
+	rdfs:label "UpdateUsersCancel"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Updating
+
+:Updating a owl:Class ;
+	rdfs:subClassOf :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#UpdatingUsers
+
+:UpdatingUsers a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "geni_updating_users"@en ;
+	rdfs:label "UpdatingUsers"@en .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Wait
+
+:Wait a owl:Class ;
+	rdfs:subClassOf :State ;
+	rdfs:comment "GENI state wait"@en ;
+	rdfs:label "State"@en .
+# 
+# http://open-multinet.info/ontology/omn-resource#Location
+# 
+# http://purl.org/vocommons/voaf#Vocabulary
+
+voaf:Vocabulary a owl:Class .
+# 
+# http://www.w3.org/2002/07/owl#AllDisjointClasses
+
+owl:AllDisjointClasses a owl:Class .
+# 
+# http://www.w3.org/2002/07/owl#IrreflexiveProperty
+
+owl:IrreflexiveProperty a owl:Class .
+# 
+# http://www.w3.org/2002/07/owl#NamedIndividual
+
+owl:NamedIndividual a owl:Class .
+# 
+# http://xmlns.com/foaf/0.1/Person
+
+foaf:Person a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://alex.willner.ws/about#me
+
+<http://alex.willner.ws/about#me> a owl:NamedIndividual , foaf:Person .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle
+
+<http://open-multinet.info/ontology/omn-lifecycle> a owl:NamedIndividual , voaf:Vocabulary .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Active
+
+:Active a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Allocated
+
+:Allocated a owl:NamedIndividual , :ReservationState .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Cleaned
+
+:Cleaned a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Error
+
+:Error a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Initialized
+
+:Initialized a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Installed
+
+:Installed a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#NotYetInitialized
+
+:NotYetInitialized a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Pending
+
+:Pending a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Preinit
+
+:Preinit a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Provisioned
+
+:Provisioned a owl:NamedIndividual , :ReservationState .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Ready
+
+:Ready a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Removing
+
+:Removing a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Started
+
+:Started a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Stopped
+
+:Stopped a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Stopping
+
+:Stopping a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Unallocated
+
+:Unallocated a owl:NamedIndividual , :ReservationState .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Uncompleted
+
+:Uncompleted a owl:NamedIndividual , :State .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Updating
+
+:Updating a owl:NamedIndividual , :State .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+
+:Active rdfs:label "Active"@en ;
+	rdfs:seeAlso "GENI geni_ready_busy operational state"@en ;
+	rdfs:comment "The related resource/service is actively performing an action"@en .
+# 
+
+:Allocated rdfs:label "Allocated"@en ;
+	rdfs:comment "The related resources/services are reserved"@en ;
+	rdfs:seeAlso "GENI geni_allocated allocation state"@en .
+# 
+
+:Cleaned rdfs:comment "The related resource/service has been cleaned"@en ;
+	rdfs:label "Cleaned"@en .
+# 
+
+:Error rdfs:seeAlso "GENI geni_failed operational state"@en ;
+	rdfs:comment "The related resource/service is in an error state"@en ;
+	rdfs:label "Error"@en .
+# 
+
+:Initialized rdfs:label "Initialized"@en ;
+	rdfs:comment "The related resource/service has been initialized"@en .
+# 
+
+:Installed rdfs:comment "The related resource/service has been installed"@en ;
+	rdfs:label "Installed"@en .
+# 
+
+:NotYetInitialized rdfs:label "Not Yet Initialized"@en ;
+	rdfs:seeAlso "GENI geni_instantiating operational state"@en ;
+	rdfs:comment "The related resource/service are not yet active/ready"@en .
+# 
+
+:Pending rdfs:label "Pending"@en ;
+	rdfs:seeAlso "GENI geni_pending_allocation operational state"@en ;
+	rdfs:comment "The related resource/service is not yet provisioned"@en .
+# 
+
+:Preinit rdfs:label "Preinit"@en ;
+	rdfs:seeAlso "GENI geni_configuring operational state"@en ;
+	rdfs:comment "The related resource/service is currently configuring"@en .
+# 
+
+:Provisioned rdfs:comment "The related resources/services are provisioned"@en ;
+	rdfs:seeAlso "GENI geni_provisioned allocation state"@en ;
+	rdfs:label "Provisioned"@en .
+# 
+
+:Ready rdfs:label "Ready"@en ;
+	rdfs:seeAlso "GENI geni_ready operational state"@en ;
+	rdfs:comment "The related resource/service is ready"@en .
+# 
+
+:Removing rdfs:label "Removing"@en ;
+	rdfs:comment "The related resource/service gets removed"@en .
+# 
+
+:Started rdfs:label "Started"@en ;
+	rdfs:comment "The related resource/service has been started"@en .
+# 
+
+:Stopped rdfs:label "Stopped"@en ;
+	rdfs:comment "The related resource/service is stopped"@en .
+# 
+
+:Stopping rdfs:seeAlso "GENI geni_stopping operational state"@en ;
+	rdfs:comment "The related resource/service is stopping"@en ;
+	rdfs:label "Stopping"@en .
+# 
+
+:Unallocated rdfs:comment "The related resources/services are not reserved"@en ;
+	rdfs:seeAlso "GENI geni_unallocated allocation state"@en ;
+	rdfs:label "Unallocated"@en .
+# 
+
+:Uncompleted rdfs:comment "The related resource/service is not complete"@en ;
+	rdfs:label "Uncompleted"@en .
+# 
+
+:Updating rdfs:comment "The related resource/service is getting updated"@en ;
+	rdfs:label "Updating"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid150 a owl:AllDisjointClasses ;
+	owl:members _:genid163 .
+
+_:genid163 a rdf:List ;
+	rdf:first :Active ;
+	rdf:rest _:genid162 .
+
+_:genid162 a rdf:List ;
+	rdf:first :Cleaned ;
+	rdf:rest _:genid161 .
+
+_:genid161 a rdf:List ;
+	rdf:first :Error ;
+	rdf:rest _:genid160 .
+
+_:genid160 a rdf:List ;
+	rdf:first :Initialized ;
+	rdf:rest _:genid159 .
+
+_:genid159 a rdf:List ;
+	rdf:first :Installed ;
+	rdf:rest _:genid158 .
+
+_:genid158 a rdf:List ;
+	rdf:first :NotYetInitialized ;
+	rdf:rest _:genid157 .
+
+_:genid157 a rdf:List ;
+	rdf:first :Ready ;
+	rdf:rest _:genid156 .
+
+_:genid156 a rdf:List ;
+	rdf:first :Removing ;
+	rdf:rest _:genid155 .
+
+_:genid155 a rdf:List ;
+	rdf:first :Started ;
+	rdf:rest _:genid154 .
+
+_:genid154 a rdf:List ;
+	rdf:first :Stopped ;
+	rdf:rest _:genid153 .
+
+_:genid153 a rdf:List ;
+	rdf:first :Stopping ;
+	rdf:rest _:genid152 .
+
+_:genid152 a rdf:List ;
+	rdf:first :Uncompleted ;
+	rdf:rest _:genid151 .
+
+_:genid151 a rdf:List ;
+	rdf:first :Updating ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid164 a owl:AllDisjointClasses ;
+	owl:members _:genid169 .
+
+_:genid169 a rdf:List ;
+	rdf:first :Allocated ;
+	rdf:rest _:genid168 .
+
+_:genid168 a rdf:List ;
+	rdf:first :Pending ;
+	rdf:rest _:genid167 .
+
+_:genid167 a rdf:List ;
+	rdf:first :Preinit ;
+	rdf:rest _:genid166 .
+
+_:genid166 a rdf:List ;
+	rdf:first :Provisioned ;
+	rdf:rest _:genid165 .
+
+_:genid165 a rdf:List ;
+	rdf:first :Unallocated ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid170 a owl:AllDisjointClasses ;
+	owl:members _:genid174 .
+
+_:genid174 a rdf:List ;
+	rdf:first :Confirmation ;
+	rdf:rest _:genid173 .
+
+_:genid173 a rdf:List ;
+	rdf:first :Manifest ;
+	rdf:rest _:genid172 .
+
+_:genid172 a rdf:List ;
+	rdf:first :Offering ;
+	rdf:rest _:genid171 .
+
+_:genid171 a rdf:List ;
+	rdf:first :Request ;
+	rdf:rest rdf:nil .
+# 
+# Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

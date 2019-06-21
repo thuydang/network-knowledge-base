@@ -1,0 +1,490 @@
+@prefix : <http://open-multinet.info/ontology/omn-monitoring#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix omn: <http://open-multinet.info/ontology/omn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix omn-service: <http://open-multinet.info/ontology/omn-service#> .
+@prefix omn-resource: <http://open-multinet.info/ontology/omn-resource#> .
+@prefix omn-component: <http://open-multinet.info/ontology/omn-component#> .
+@prefix omn-lifecycle: <http://open-multinet.info/ontology/omn-lifecycle#> .
+@prefix omn-federation: <http://open-multinet.info/ontology/omn-federation#> .
+
+<http://open-multinet.info/ontology/omn-monitoring> a owl:Ontology ;
+	dc:publisher <http://open-multinet.info/> ;
+	dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+	vann:preferredNamespacePrefix "omn-monitoring" ;
+	dc:author <https://www.linkedin.com/in/yahyaalhazmi> ;
+	dc:contributor <http://www.commit-nl.nl/people/morsey> ;
+	dc:date "2015-05-30" ;
+	dc:contributor <https://staff.fnwi.uva.nl/p.grosso> , <mailto:jorge.lopez_vergara@uam.es> ;
+	rdfs:label "omn-monitoring"@en ;
+	dc:creator <https://www.linkedin.com/in/yahyaalhazmi> ;
+	vann:preferredNamespaceUri "http://open-multinet.info/ontology/omn-monitoring#" ;
+	dc:description "This ontology includes the main monitoring concept."^^xsd:string ;
+	dc:contributor <http://alex.willner.ws/about#me> , <mailto:steger@complex.elte.hu> , <mailto:chrisap@noc.ntua.gr> ;
+	dc:title "Open-Multinet Monitoring Upper Ontology"^^xsd:string ;
+	dc:contributor <mailto:lakis@inf.elte.hu> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2002/07/owl#minQualifiedCardinality
+
+owl:minQualifiedCardinality a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-monitoring#hasLifetime
+
+:hasLifetime a owl:ObjectProperty ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasLifetime rdfs:range :Lifetime .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#hasMeasurementMetric
+
+:hasMeasurementMetric a owl:ObjectProperty ;
+	owl:inverseOf :isMeasurementMetricOf ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Class ;
+	owl:unionOf _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:hasMeasurementMetric rdfs:range :Metric .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#hasMetricAttribute
+
+:hasMetricAttribute a owl:ObjectProperty ;
+	rdfs:domain :Metric ;
+	rdfs:range :Measurement .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#hasUnit
+
+:hasUnit a owl:ObjectProperty .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#isMeasurementMetricOf
+
+:isMeasurementMetricOf a owl:ObjectProperty ;
+	rdfs:domain :Metric ;
+	rdfs:range _:genid8 .
+
+_:genid8 a owl:Class ;
+	owl:unionOf _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest rdf:nil .
+
+:isMeasurementMetricOf rdfs:comment "Is a measurement metric of any observed object, e.g. resource, component or service"^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#isMeasurementOf
+
+:isMeasurementOf a owl:ObjectProperty ;
+	rdfs:domain :Measurement ;
+	rdfs:range :Metric ;
+	rdfs:comment "Defines the relation between a measurement and a metric"^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#measuredBy
+
+:measuredBy a owl:ObjectProperty ;
+	owl:inverseOf :measuresMetric ;
+	rdfs:domain :Metric ;
+	rdfs:range :Tool .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#measuresMetric
+
+:measuresMetric a owl:ObjectProperty ;
+	rdfs:domain :Tool ;
+	rdfs:range :Metric .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#monitors
+
+:monitors a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain :Tool , _:genid12 .
+
+_:genid12 a owl:Class ;
+	owl:unionOf _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first omn:Component ;
+	rdf:rest _:genid15 .
+
+_:genid15 a rdf:List ;
+	rdf:first omn:Resource ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first omn-federation:Infrastructure ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#pushedBy
+
+:pushedBy a owl:ObjectProperty ;
+	rdfs:domain :Data ;
+	rdfs:range :Tool .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#pushesDataTo
+
+:pushesDataTo a owl:ObjectProperty ;
+	rdfs:domain :Tool ;
+	rdfs:range _:genid17 .
+
+_:genid17 a owl:Class ;
+	owl:unionOf _:genid19 .
+
+_:genid19 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first :Tool ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#retrievedBy
+
+:retrievedBy a owl:ObjectProperty ;
+	rdfs:domain :Data ;
+	rdfs:range :Tool .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#retrievedFrom
+
+:retrievedFrom a owl:ObjectProperty ;
+	rdfs:domain :Data ;
+	rdfs:range _:genid20 .
+
+_:genid20 a owl:Class ;
+	owl:unionOf _:genid23 .
+
+_:genid23 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first omn-federation:Infrastructure ;
+	rdf:rest _:genid21 .
+
+_:genid21 a rdf:List ;
+	rdf:first :Tool ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#sendTo
+
+:sendTo a owl:ObjectProperty ;
+	rdfs:domain _:genid24 .
+
+_:genid24 a owl:Class ;
+	owl:unionOf _:genid26 .
+
+_:genid26 a rdf:List ;
+	rdf:first omn-lifecycle:Request ;
+	rdf:rest _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first :Data ;
+	rdf:rest rdf:nil .
+
+:sendTo rdfs:range _:genid27 .
+
+_:genid27 a owl:Class ;
+	owl:unionOf _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first omn:Service ;
+	rdf:rest _:genid28 .
+
+_:genid28 a rdf:List ;
+	rdf:first :Tool ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#sentBy
+
+:sentBy a owl:ObjectProperty ;
+	rdfs:domain _:genid30 .
+
+_:genid30 a owl:Class ;
+	owl:unionOf _:genid32 .
+
+_:genid32 a rdf:List ;
+	rdf:first omn-lifecycle:Request ;
+	rdf:rest _:genid31 .
+
+_:genid31 a rdf:List ;
+	rdf:first :Data ;
+	rdf:rest rdf:nil .
+
+:sentBy rdfs:range :Tool .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#sentFrom
+
+:sentFrom a owl:ObjectProperty ;
+	rdfs:domain _:genid33 .
+
+_:genid33 a owl:Class ;
+	owl:unionOf _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first omn-lifecycle:Request ;
+	rdf:rest _:genid34 .
+
+_:genid34 a rdf:List ;
+	rdf:first :Data ;
+	rdf:rest rdf:nil .
+
+:sentFrom rdfs:range _:genid36 .
+
+_:genid36 a owl:Class ;
+	owl:unionOf _:genid38 .
+
+_:genid38 a rdf:List ;
+	rdf:first omn-federation:Infrastructure ;
+	rdf:rest _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first :Tool ;
+	rdf:rest rdf:nil .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-monitoring#elapsedTimeAtClientSinceExperimentStartedInSeconds
+
+:elapsedTimeAtClientSinceExperimentStartedInSeconds a owl:DatatypeProperty ;
+	rdfs:range xsd:decimal .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#elapsedTimeAtServerSinceExperimentStartedInSeconds
+
+:elapsedTimeAtServerSinceExperimentStartedInSeconds a owl:DatatypeProperty ;
+	rdfs:range xsd:decimal .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#endTime
+
+:endTime a owl:DatatypeProperty ;
+	rdfs:domain :Lifetime ;
+	rdfs:range xsd:dateTime .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#isOffered
+
+:isOffered a owl:DatatypeProperty ;
+	rdfs:domain :MonitoringService ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment "Indicate if a service is provided (offered to be requested by users)."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#isRequested
+
+:isRequested a owl:DatatypeProperty ;
+	rdfs:domain :MonitoringService ;
+	rdfs:range xsd:boolean ;
+	rdfs:comment "Indicate if a service is requested (True) or not (False)."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#requiresPassword
+
+:requiresPassword a owl:DatatypeProperty ;
+	rdfs:domain _:genid39 .
+
+_:genid39 a owl:Class ;
+	owl:unionOf _:genid41 .
+
+_:genid41 a rdf:List ;
+	rdf:first :Service ;
+	rdf:rest _:genid40 .
+
+_:genid40 a rdf:List ;
+	rdf:first :Tool ;
+	rdf:rest rdf:nil .
+
+:requiresPassword rdfs:range xsd:string ;
+	rdfs:comment "Determines the password."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#requiresUsername
+
+:requiresUsername a owl:DatatypeProperty ;
+	rdfs:domain _:genid42 .
+
+_:genid42 a owl:Class ;
+	owl:unionOf _:genid44 .
+
+_:genid44 a rdf:List ;
+	rdf:first :Service ;
+	rdf:rest _:genid43 .
+
+_:genid43 a rdf:List ;
+	rdf:first :Tool ;
+	rdf:rest rdf:nil .
+
+:requiresUsername rdfs:range xsd:string ;
+	rdfs:comment "Determines the username."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#startTime
+
+:startTime a owl:DatatypeProperty ;
+	rdfs:domain :Lifetime ;
+	rdfs:range xsd:dateTime .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn#Component
+
+omn:Component a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Resource
+
+omn:Resource a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn#Service
+
+omn:Service a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-federation#Infrastructure
+
+omn-federation:Infrastructure a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Request
+
+omn-lifecycle:Request a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#ActiveMeasurement
+
+:ActiveMeasurement a owl:Class ;
+	rdfs:subClassOf :Measurement ;
+	rdfs:comment "Represents the active method of performing measurements, e.g. ping, tracerout, iperf."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Data
+
+:Data a owl:Class ;
+	rdfs:comment "Data represents measurement data as well as other monitoring related information."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#FirstLevelSupport
+
+:FirstLevelSupport a owl:Class ;
+	rdfs:subClassOf omn:Service ;
+	rdfs:comment "Provides first level support monitoring information about the health and status of infrastructures. And the overall status of an infrastructure can be shown in one of three RAG (R:Red 'if down', A:Amber 'if in risk or some components are down' or G:Green 'if OK') status."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#InfrastructureHealthMonitoring
+
+:InfrastructureHealthMonitoring a owl:Class ;
+	rdfs:subClassOf :MonitoringService ;
+	rdfs:comment "Rrepresents the monitoring service that gives high level monitoring information about the health and the status of an ICT infrastructure."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#InfrastructureResourceMonitoring
+
+:InfrastructureResourceMonitoring a owl:Class ;
+	rdfs:subClassOf :MonitoringService ;
+	rdfs:comment "Rrepresents the monitoring service that gives detailed monitoring information about the used resources and services at an ICT infrastructure."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Lifetime
+
+:Lifetime a owl:Class ;
+	rdfs:comment "Represents lifetime of any process (e.g. monitoring service or measurement)."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Measurement
+
+:Measurement a owl:Class ;
+	rdfs:subClassOf omn:Service ;
+	rdfs:comment "Represents a measurement which is a systematic, replicable process by which measurement metrics are quantified."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Metric
+
+:Metric a owl:Class ;
+	rdfs:comment "Metric is anything that can be measured, such as CPU load of a machine, packet loss in a channel, etc."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#MonitoringService
+
+:MonitoringService a owl:Class ;
+	rdfs:subClassOf omn:Service ;
+	rdfs:comment "Rrepresents any monitoring service offered."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#PassiveMeasurement
+
+:PassiveMeasurement a owl:Class ;
+	rdfs:subClassOf :Measurement ;
+	rdfs:comment "Represents the passive method of performing measurements, e.g. pcap, wireshark."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#SLAMonitoring
+
+:SLAMonitoring a owl:Class ;
+	rdfs:subClassOf :MonitoringService ;
+	rdfs:comment "Rrepresents the Service Level Agreement (SLA) monitoring service that gives detailed monitoring information about pre-defined metrics to observe the SLAs whether they are met or violated."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Service
+
+:Service a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Tool
+
+:Tool a owl:Class ;
+	rdfs:subClassOf omn:Resource ;
+	rdfs:comment "Tool represents tools used for performing measurements and monitoring such as measurement probes, data collectors, visualizer, etc."^^xsd:string .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Unit
+
+:Unit a owl:Class ;
+	rdfs:comment "Unit represents the unit of the measurement and monitoring data such as Bytes, Bitspersecond, etc."^^xsd:string .
+# 
+
+_:genid45 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger .
+# Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

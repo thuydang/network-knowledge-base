@@ -1,0 +1,202 @@
+@prefix : <http://www.gt-arc.com/isco/ontologies/2017/10/sample-#> .
+@prefix omn: <http://open-multinet.info/ontology/omn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix netmode: <http://www.semanticweb.org/mary/ontologies/2015/0/untitled-ontology-157#> .
+@prefix omn-resource: <http://open-multinet.info/ontology/omn-resource#> .
+@prefix omn-lifecycle: <http://open-multinet.info/ontology/omn-lifecycle#> .
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1> a owl:Ontology ;
+	owl:imports <http://ontology/omn-resource> , <http://www.w3.org/2006/time> , <http://ontology/omn> , <http://ontology/omn-lifecycle> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn#hasResource
+
+omn:hasResource a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn#hasReservation
+
+omn:hasReservation a owl:ObjectProperty .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasReservationState
+
+omn-lifecycle:hasReservationState a owl:ObjectProperty .
+# 
+# http://open-multinet.info/ontology/omn-resource#hasInterface
+
+omn-resource:hasInterface a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#hasID
+
+omn-lifecycle:hasID a owl:DatatypeProperty .
+# 
+# http://open-multinet.info/ontology/omn-resource#isExclusive
+
+omn-resource:isExclusive a owl:DatatypeProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Allocated
+
+omn-lifecycle:Allocated a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Offering
+
+omn-lifecycle:Offering a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-lifecycle#Provisioned
+
+omn-lifecycle:Provisioned a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-resource#Interface
+
+omn-resource:Interface a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-resource#Node
+
+omn-resource:Node a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#allocated
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#allocated> a owl:NamedIndividual , omn-lifecycle:Allocated .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lfeend1
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lfeend1> a owl:NamedIndividual , time:Instant .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life1
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life1> a owl:NamedIndividual , time:Interval ;
+	omn-lifecycle:hasReservationState <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#allocated> ;
+	time:hasBeginning <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart1> ;
+	time:hasEnd <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lfeend1> .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life2
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life2> a owl:NamedIndividual , time:Interval ;
+	omn-lifecycle:hasReservationState <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#provisioned> ;
+	time:hasBeginning <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart2> ;
+	time:hasEnd <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifeend2> .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life3
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life3> a owl:NamedIndividual , time:Interval ;
+	omn-lifecycle:hasReservationState <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#allocated> ;
+	time:hasBeginning <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart3> ;
+	time:hasEnd <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifeend3> .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifeend2
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifeend2> a owl:NamedIndividual , time:Instant .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifeend3
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifeend3> a owl:NamedIndividual , time:Instant .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart1
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart1> a owl:NamedIndividual , time:Instant .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart2
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart2> a owl:NamedIndividual , time:Instant .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart3
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#lifestart3> a owl:NamedIndividual , time:Instant .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#offering1
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#offering1> a owl:NamedIndividual , omn-lifecycle:Offering ;
+	omn:hasResource <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1_if1> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2_if2> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3_if3> .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1> a owl:NamedIndividual , omn-resource:Node ;
+	omn:hasReservation <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life1> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life2> ;
+	omn-resource:hasInterface <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1_if1> ;
+	omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+node+omf.netmode.node1" ;
+	omn-resource:isExclusive "true" .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1_if1
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node1_if1> a owl:NamedIndividual , omn-resource:Interface ;
+	omn:hasReservation <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life1> , <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life2> ;
+	omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+interface+omf.netmode.node1_if1" .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2> a owl:NamedIndividual , omn-resource:Node ;
+	omn-resource:hasInterface <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2_if2> ;
+	omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+node+omf.netmode.node2" ;
+	omn-resource:isExclusive "true" .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2_if2
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node2_if2> a owl:NamedIndividual , omn-resource:Interface ;
+	omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+interface+omf.netmode.node2_if2" .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3> a owl:NamedIndividual , omn-resource:Node ;
+	omn:hasReservation <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life3> ;
+	omn-resource:hasInterface <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3_if3> ;
+	omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+node+omf.netmode.node3" ;
+	omn-resource:isExclusive "true" .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3_if3
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#omf.netmode.node3_if3> a owl:NamedIndividual , omn-resource:Interface ;
+	omn:hasReservation <http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#life3> ;
+	omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+interface+omf.netmode.node3_if3" .
+# 
+# http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#provisioned
+
+<http://www.gt-arc.com/isco/ontologies/2017/10/sample-lifecycle-offering-1#provisioned> a owl:NamedIndividual , omn-lifecycle:Provisioned .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi

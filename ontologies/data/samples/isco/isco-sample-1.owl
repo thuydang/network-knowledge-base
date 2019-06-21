@@ -1,0 +1,480 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1">
+    <Prefix name="" IRI="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#"/>
+    <Prefix name="omn" IRI="http://open-multinet.info/ontology/omn#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="netmode" IRI="http://www.semanticweb.org/mary/ontologies/2015/0/untitled-ontology-157#"/>
+    <Prefix name="omn-policy" IRI="http://open-multinet.info/ontology/omn-policy#"/>
+    <Prefix name="omn-service" IRI="http://open-multinet.info/ontology/omn-service#"/>
+    <Prefix name="omn-resource" IRI="http://open-multinet.info/ontology/omn-resource#"/>
+    <Prefix name="omn-lifecycle" IRI="http://open-multinet.info/ontology/omn-lifecycle#"/>
+    <Prefix name="omn-domain-nfv" IRI="http://open-multinet.info/ontology/omn-domain-nfv#"/>
+    <Prefix name="novipolicyservice" IRI="http://fp7-novi.eu/NOVIPolicyService.owl#"/>
+    <Import>http://www.gt-arc-com/network/management/ontologies/2017/9/policy-information-base</Import>
+    <Declaration>
+        <NamedIndividual IRI="#lifestart2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#videoQoS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="omn-lifecycle:Offering"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#videoProcessingService"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cameraService2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#allocated"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lifeend2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#videoStreaming"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="omn-resource:Node"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#offering1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#provisioned"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="omn-lifecycle:Allocated"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#omf.netmode.node2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#firewall"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#life3"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="omn-resource:Interface"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="omn-resource:isExclusive"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#omf.netmode.node1_if1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#life1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#gtarc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="omn-resource:hasInterface"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lifestart3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cameraService1"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:Instant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lifestart1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#omf.netmode.node2_if2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lifeend3"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="omn:hasResource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#daiTackerService"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="omn-lifecycle:Provisioned"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#omf.netmode.node3_if3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dailabTacker"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#life2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#dai-vm-01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#omf.netmode.node3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="omn-lifecycle:hasReservationState"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lfeend1"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-lifecycle:Allocated"/>
+        <NamedIndividual IRI="#allocated"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService"/>
+        <NamedIndividual IRI="#cameraService1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService"/>
+        <NamedIndividual IRI="#cameraService2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-domain-nfv:VM"/>
+        <NamedIndividual IRI="#dai-vm-01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#InfrastructureService"/>
+        <NamedIndividual IRI="#daiTackerService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-domain-nfv:VirtualNetworkFunction"/>
+        <NamedIndividual IRI="#firewall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#Provider"/>
+        <NamedIndividual IRI="#gtarc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Instant"/>
+        <NamedIndividual IRI="#lfeend1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Interval"/>
+        <NamedIndividual IRI="#life1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Interval"/>
+        <NamedIndividual IRI="#life2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Interval"/>
+        <NamedIndividual IRI="#life3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Instant"/>
+        <NamedIndividual IRI="#lifeend2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Instant"/>
+        <NamedIndividual IRI="#lifeend3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Instant"/>
+        <NamedIndividual IRI="#lifestart1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Instant"/>
+        <NamedIndividual IRI="#lifestart2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:Instant"/>
+        <NamedIndividual IRI="#lifestart3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-lifecycle:Offering"/>
+        <NamedIndividual IRI="#offering1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-resource:Node"/>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-resource:Interface"/>
+        <NamedIndividual IRI="#omf.netmode.node1_if1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-resource:Node"/>
+        <NamedIndividual IRI="#omf.netmode.node2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-resource:Interface"/>
+        <NamedIndividual IRI="#omf.netmode.node2_if2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-resource:Node"/>
+        <NamedIndividual IRI="#omf.netmode.node3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-resource:Interface"/>
+        <NamedIndividual IRI="#omf.netmode.node3_if3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="omn-lifecycle:Provisioned"/>
+        <NamedIndividual IRI="#provisioned"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService"/>
+        <NamedIndividual IRI="#videoProcessingService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkService"/>
+        <NamedIndividual IRI="#videoQoS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#Video"/>
+        <NamedIndividual IRI="#videoStreaming"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#hasType"/>
+        <NamedIndividual IRI="#cameraService1"/>
+        <NamedIndividual IRI="#videoStreaming"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#hasType"/>
+        <NamedIndividual IRI="#cameraService2"/>
+        <NamedIndividual IRI="#videoStreaming"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#provide"/>
+        <NamedIndividual IRI="#gtarc"/>
+        <NamedIndividual IRI="#cameraService1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn-lifecycle:hasReservationState"/>
+        <NamedIndividual IRI="#life1"/>
+        <NamedIndividual IRI="#allocated"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+        <NamedIndividual IRI="#life1"/>
+        <NamedIndividual IRI="#lifestart1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+        <NamedIndividual IRI="#life1"/>
+        <NamedIndividual IRI="#lfeend1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn-lifecycle:hasReservationState"/>
+        <NamedIndividual IRI="#life2"/>
+        <NamedIndividual IRI="#provisioned"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+        <NamedIndividual IRI="#life2"/>
+        <NamedIndividual IRI="#lifestart2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+        <NamedIndividual IRI="#life2"/>
+        <NamedIndividual IRI="#lifeend2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn-lifecycle:hasReservationState"/>
+        <NamedIndividual IRI="#life3"/>
+        <NamedIndividual IRI="#allocated"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+        <NamedIndividual IRI="#life3"/>
+        <NamedIndividual IRI="#lifestart3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+        <NamedIndividual IRI="#life3"/>
+        <NamedIndividual IRI="#lifeend3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+        <NamedIndividual IRI="#life1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+        <NamedIndividual IRI="#life2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn-resource:hasInterface"/>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+        <NamedIndividual IRI="#omf.netmode.node1_if1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+        <NamedIndividual IRI="#omf.netmode.node1_if1"/>
+        <NamedIndividual IRI="#life1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+        <NamedIndividual IRI="#omf.netmode.node1_if1"/>
+        <NamedIndividual IRI="#life2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn-resource:hasInterface"/>
+        <NamedIndividual IRI="#omf.netmode.node2"/>
+        <NamedIndividual IRI="#omf.netmode.node2_if2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+        <NamedIndividual IRI="#omf.netmode.node3"/>
+        <NamedIndividual IRI="#life3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn-resource:hasInterface"/>
+        <NamedIndividual IRI="#omf.netmode.node3"/>
+        <NamedIndividual IRI="#omf.netmode.node3_if3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="omn:hasReservation"/>
+        <NamedIndividual IRI="#omf.netmode.node3_if3"/>
+        <NamedIndividual IRI="#life3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#hasType"/>
+        <NamedIndividual IRI="#videoProcessingService"/>
+        <NamedIndividual IRI="#videoStreaming"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">urn:publicid:IDN+omf:netmode+node+omf.netmode.node1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-resource:isExclusive"/>
+        <NamedIndividual IRI="#omf.netmode.node1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+        <NamedIndividual IRI="#omf.netmode.node1_if1"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">urn:publicid:IDN+omf:netmode+interface+omf.netmode.node1_if1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+        <NamedIndividual IRI="#omf.netmode.node2"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">urn:publicid:IDN+omf:netmode+node+omf.netmode.node2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-resource:isExclusive"/>
+        <NamedIndividual IRI="#omf.netmode.node2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+        <NamedIndividual IRI="#omf.netmode.node2_if2"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">urn:publicid:IDN+omf:netmode+interface+omf.netmode.node2_if2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+        <NamedIndividual IRI="#omf.netmode.node3"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">urn:publicid:IDN+omf:netmode+node+omf.netmode.node3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-resource:isExclusive"/>
+        <NamedIndividual IRI="#omf.netmode.node3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty abbreviatedIRI="omn-lifecycle:hasID"/>
+        <NamedIndividual IRI="#omf.netmode.node3_if3"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">urn:publicid:IDN+omf:netmode+interface+omf.netmode.node3_if3</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="omn:hasResource"/>
+        <Class abbreviatedIRI="omn-lifecycle:Offering"/>
+    </ObjectPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ApplicationService</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#InfrastructureService</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">InfrastructureService</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkService</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NetworkService</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#dai-vm-01</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#omf.netmode.node1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#omf.netmode.node1_if1</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#omf.netmode.node2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#omf.netmode.node2_if2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#omf.netmode.node3</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <IRI>#offering1</IRI>
+        <IRI>#omf.netmode.node3_if3</IRI>
+    </AnnotationAssertion>
+    <AnnotationPropertyRange>
+        <AnnotationProperty abbreviatedIRI="omn:hasResource"/>
+        <AbbreviatedIRI>omn:Resource</AbbreviatedIRI>
+    </AnnotationPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

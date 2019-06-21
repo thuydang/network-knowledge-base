@@ -1,0 +1,25 @@
+*.class
+**/target
+bin/
+dist
+**/logs
+*~
+target
+target-ide
+.classpath
+.project
+.settings
+.idea
+xtend-gen
+yang-gen-config
+yang-gen-sal
+yang-gen-code
+classes
+.DS_STORE
+.metadata
+
+#Eclipse checkstyle
+**/.checkstyle
+
+#trying tools
+misc

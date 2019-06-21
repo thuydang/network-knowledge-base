@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-service" uri="import/omn/omn-service.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-monitoring-unit" uri="import/omn/omn-monitoring-unit.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-monitoring-tool" uri="import/omn/omn-monitoring-tool.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-monitoring-genericconcepts" uri="import/omn/omn-monitoring-genericconcepts.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-monitoring-metric" uri="import/omn/omn-monitoring-metric.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-monitoring-data" uri="import/omn/omn-monitoring-data.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-component" uri="import/omn/omn-component.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn" uri="import/omn/omn.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base" uri="service-information-base.owl"/>
+    <uri id="Imports Wizard Entry" name="http://open-multinet.info/ontology/omn-monitoring" uri="import/omn/omn-monitoring.ttl"/>
+    <uri id="User Entered Import Resolution" name="file:.///novi-im.owl" uri="import/novi/policy_imV4.owl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-lifecycle" uri="import/omn/omn-lifecycle.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn_wireless.owl" uri="import/omn/omn-domain-wireless.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-domain-nfv" uri="import/omn/omn-domain-nfv.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-resource" uri="import/omn/omn-resource.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn" uri="import/omn/omn.owl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-component" uri="import/omn/omn-component.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/NOVIPolicyService.owl" uri="import/novi/policy_imV4.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/im.owl" uri="import/novi/novi-im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/monitoring_features.owl" uri="import/novi/monitoring_features.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/monitoring_parameter.owl" uri="import/novi/monitoring_parameters.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/monitoring_query.owl" uri="import/novi/monitoring_query.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/monitoring_stat.owl" uri="import/novi/monitoring_stat.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://fp7-novi.eu/unit.owl" uri="import/novi/unit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://www.gt-arc-com/network/management/ontologies/2017/9/policy-information-base" uri="policy-information-base.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base" uri="service-information-base.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="duplicate:http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1" uri="data/samples/isco/isco-sample-1.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="duplicate:http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1" uri="data/samples/isco/isco-sample-1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://www.owl-ontologies.com/javaDemo.owl" uri="test.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1509703572102" name="http://www.w3.org/2002/07/owl" uri="import/novi/monitoring_task.owl"/>
+    </group>
+</catalog>

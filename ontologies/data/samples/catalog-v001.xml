@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.gt-arc-com/isco/ontologies/2017/9/service-information-base" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/service/service-information-base.owl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-resource" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-resource.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-lifecycle" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-lifecycle.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn_wireless.owl" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-domain-wireless.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-domain-nfv" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-domain-nfv.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn.owl"/>
+    <uri id="User Entered Import Resolution" name="http://open-multinet.info/ontology/omn-component" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-component.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology/omn-resource" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-resource.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology/omn-lifecycle" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/import/omn/omn-lifecycle.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://ontology/omn" uri="file:/home/dang/data/src/80_isco_ws/network-knowledge-base/ontologies/service/service-information-base.owl"/>
+</catalog>

@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#"
+     xml:base="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1"
+     xmlns:service-information-base="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#"
+     xmlns:omn-resource="http://open-multinet.info/ontology/omn-resource#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:omn-policy="http://open-multinet.info/ontology/omn-policy#"
+     xmlns:omn="http://open-multinet.info/ontology/omn#"
+     xmlns:omn-domain-nfv="http://open-multinet.info/ontology/omn-domain-nfv#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:omn-lifecycle="http://open-multinet.info/ontology/omn-lifecycle#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:omn-service="http://open-multinet.info/ontology/omn-service#"
+     xmlns:novipolicyservice="http://fp7-novi.eu/NOVIPolicyService.owl#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:netmode="http://www.semanticweb.org/mary/ontologies/2015/0/untitled-ontology-157#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1">
+        <owl:imports rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/policy-information-base"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn#hasResource -->
+
+    <owl:AnnotationProperty rdf:about="http://open-multinet.info/ontology/omn#hasResource">
+        <rdfs:range rdf:resource="http://open-multinet.info/ontology/omn#Resource"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn#hasReservation -->
+
+    <owl:ObjectProperty rdf:about="http://open-multinet.info/ontology/omn#hasReservation"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn#hasResource -->
+
+    <owl:ObjectProperty rdf:about="http://open-multinet.info/ontology/omn#hasResource">
+        <rdfs:domain rdf:resource="http://open-multinet.info/ontology/omn-lifecycle#Offering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-lifecycle#hasReservationState -->
+
+    <owl:ObjectProperty rdf:about="http://open-multinet.info/ontology/omn-lifecycle#hasReservationState"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-resource#hasInterface -->
+
+    <owl:ObjectProperty rdf:about="http://open-multinet.info/ontology/omn-resource#hasInterface"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasBeginning -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasBeginning"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasEnd"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-lifecycle#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://open-multinet.info/ontology/omn-lifecycle#hasID"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-resource#isExclusive -->
+
+    <owl:DatatypeProperty rdf:about="http://open-multinet.info/ontology/omn-resource#isExclusive"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-lifecycle#Allocated -->
+
+    <owl:Class rdf:about="http://open-multinet.info/ontology/omn-lifecycle#Allocated"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-lifecycle#Offering -->
+
+    <owl:Class rdf:about="http://open-multinet.info/ontology/omn-lifecycle#Offering"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-lifecycle#Provisioned -->
+
+    <owl:Class rdf:about="http://open-multinet.info/ontology/omn-lifecycle#Provisioned"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-resource#Interface -->
+
+    <owl:Class rdf:about="http://open-multinet.info/ontology/omn-resource#Interface"/>
+    
+
+
+    <!-- http://open-multinet.info/ontology/omn-resource#Node -->
+
+    <owl:Class rdf:about="http://open-multinet.info/ontology/omn-resource#Node"/>
+    
+
+
+    <!-- http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService -->
+
+    <rdf:Description rdf:about="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService">
+        <rdfs:label>ApplicationService</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#InfrastructureService -->
+
+    <rdf:Description rdf:about="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#InfrastructureService">
+        <rdfs:label>InfrastructureService</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#allocated -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#allocated">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-lifecycle#Allocated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#camera1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#camera1">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#SurveillanceCamera"/>
+        <service-information-base:isProvidedBy rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#gtarc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#camera2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#camera2">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#SurveillanceCamera"/>
+        <service-information-base:isProvidedBy rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#gtarc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#cameraService1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#cameraService1">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService"/>
+        <service-information-base:hasType rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoStreaming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#cameraService2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#cameraService2">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService"/>
+        <service-information-base:hasType rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoStreaming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#dai-vm-01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#dai-vm-01">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-domain-nfv#VM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#daiTackerService -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#daiTackerService">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#InfrastructureService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#dailabTacker -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#dailabTacker"/>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#firewall -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#firewall">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-domain-nfv#VirtualNetworkFunction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#gtarc -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#gtarc">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#Provider"/>
+        <service-information-base:provide rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#cameraService1"/>
+        <service-information-base:provide rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#daiTackerService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lfeend1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lfeend1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <omn-lifecycle:hasReservationState rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#allocated"/>
+        <time:hasBeginning rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart1"/>
+        <time:hasEnd rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lfeend1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <omn-lifecycle:hasReservationState rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#provisioned"/>
+        <time:hasBeginning rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart2"/>
+        <time:hasEnd rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life3">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <omn-lifecycle:hasReservationState rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#allocated"/>
+        <time:hasBeginning rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart3"/>
+        <time:hasEnd rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend3">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart2">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart3">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#offering1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#offering1">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-lifecycle#Offering"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#dai-vm-01"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1_if1"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2_if2"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3"/>
+        <omn:hasResource rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3_if3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Node"/>
+        <omn:hasReservation rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life1"/>
+        <omn:hasReservation rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life2"/>
+        <omn-resource:hasInterface rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1_if1"/>
+        <omn-lifecycle:hasID>urn:publicid:IDN+omf:netmode+node+omf.netmode.node1</omn-lifecycle:hasID>
+        <omn-resource:isExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</omn-resource:isExclusive>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1_if1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1_if1">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Interface"/>
+        <omn:hasReservation rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life1"/>
+        <omn:hasReservation rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life2"/>
+        <omn-lifecycle:hasID>urn:publicid:IDN+omf:netmode+interface+omf.netmode.node1_if1</omn-lifecycle:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Node"/>
+        <omn-resource:hasInterface rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2_if2"/>
+        <omn-lifecycle:hasID>urn:publicid:IDN+omf:netmode+node+omf.netmode.node2</omn-lifecycle:hasID>
+        <omn-resource:isExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</omn-resource:isExclusive>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2_if2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2_if2">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Interface"/>
+        <omn-lifecycle:hasID>urn:publicid:IDN+omf:netmode+interface+omf.netmode.node2_if2</omn-lifecycle:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Node"/>
+        <omn:hasReservation rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life3"/>
+        <omn-resource:hasInterface rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3_if3"/>
+        <omn-lifecycle:hasID>urn:publicid:IDN+omf:netmode+node+omf.netmode.node3</omn-lifecycle:hasID>
+        <omn-resource:isExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</omn-resource:isExclusive>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3_if3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3_if3">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-resource#Interface"/>
+        <omn:hasReservation rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life3"/>
+        <omn-lifecycle:hasID>urn:publicid:IDN+omf:netmode+interface+omf.netmode.node3_if3</omn-lifecycle:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#provisioned -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#provisioned">
+        <rdf:type rdf:resource="http://open-multinet.info/ontology/omn-lifecycle#Provisioned"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoProcessingService -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoProcessingService">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService"/>
+        <service-information-base:hasType rdf:resource="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoStreaming"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoQoS -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoQoS">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoStreaming -->
+
+    <owl:NamedIndividual rdf:about="http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#videoStreaming">
+        <rdf:type rdf:resource="http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#Video"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

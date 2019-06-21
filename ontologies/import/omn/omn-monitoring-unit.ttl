@@ -1,0 +1,1054 @@
+@prefix : <http://open-multinet.info/ontology/omn-monitoring-unit#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix omn: <http://open-multinet.info/ontology/omn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix omn-service: <http://open-multinet.info/ontology/omn-service#> .
+@prefix omn-resource: <http://open-multinet.info/ontology/omn-resource#> .
+@prefix omn-component: <http://open-multinet.info/ontology/omn-component#> .
+@prefix omn-lifecycle: <http://open-multinet.info/ontology/omn-lifecycle#> .
+@prefix omn-federation: <http://open-multinet.info/ontology/omn-federation#> .
+@prefix omn-monitoring: <http://open-multinet.info/ontology/omn-monitoring#> .
+@prefix omn-monitoring-data: <http://open-multinet.info/ontology/omn-monitoring-data#> .
+@prefix omn-monitoring-tool: <http://open-multinet.info/ontology/omn-monitoring-tool#> .
+@prefix omn-monitoring-metric: <http://open-multinet.info/ontology/omn-monitoring-metric#> .
+@prefix omn-monitoring-genericconcepts: <http://open-multinet.info/ontology/omn-monitoring-genericconcepts#> .
+
+<http://open-multinet.info/ontology/omn-monitoring-unit> a owl:Ontology ;
+	dc:publisher <http://open-multinet.info/> ;
+	dcterms:license <http://creativecommons.org/licenses/by/4.0/> ;
+	dc:contributor <https://www.linkedin.com/in/yahyaalhazmi> ;
+	dc:description "This ontology defines the data unites (e.g. bit, byte, second, bps) covering both unit prefixes binary and decimal, as well as different levels (nominal, ordinal, interval, and ratio) and dimensions (basic and derived)."^^xsd:string ;
+	dc:contributor <http://www.commit-nl.nl/people/morsey> ;
+	dc:date "2015-05-30" ;
+	dc:contributor <https://staff.fnwi.uva.nl/p.grosso> , <mailto:jorge.lopez_vergara@uam.es> ;
+	rdfs:label "omn-monitoring-unit"@en ;
+	dc:title "Open-Multinet Monitoring Unit Ontology"^^xsd:string ;
+	dc:author "NOVI project http://www.fp7-novi.eu/."^^xsd:string ;
+	dc:creator <https://www.linkedin.com/in/yahyaalhazmi> ;
+	dc:rights "this ontology was developed by the European FP7 project NOVI. It was published under the name http://www.fp7-novi.eu/information-model/unit.owl. However now it is part of OMN ontology"^^xsd:string ;
+	rdfs:comment "This ontology reused several concepts from NASA unit ontology http://sweet.jpl.nasa.gov/ontology/units.owl."@en ;
+	dc:contributor <http://alex.willner.ws/about#me> , <mailto:steger@complex.elte.hu> ;
+	vann:preferredNamespaceUri "http://open-multinet.info/ontology/omn-monitoring-unit#" ;
+	dc:contributor <mailto:chrisap@noc.ntua.gr> ;
+	vann:preferredNamespacePrefix "omn-monitoring-unit" ;
+	dc:contributor <mailto:lakis@inf.elte.hu> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-monitoring#hasUnit
+
+omn-monitoring:hasUnit a owl:ObjectProperty ;
+	rdfs:domain _:genid1 .
+
+_:genid1 a owl:Class ;
+	owl:unionOf _:genid3 .
+
+_:genid3 a rdf:List ;
+	rdf:first omn-monitoring:Data ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first <http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkParameter> ;
+	rdf:rest rdf:nil .
+
+omn-monitoring:hasUnit rdfs:range omn-monitoring:Unit .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#defaultUnit
+
+:defaultUnit a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain :Dimension ;
+	rdfs:range omn-monitoring:Unit .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#derivedFrom
+
+:derivedFrom a owl:ObjectProperty .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#hasPrefix
+
+:hasPrefix a owl:ObjectProperty , owl:FunctionalProperty ;
+	rdfs:domain omn-monitoring:Unit ;
+	rdfs:range :Prefix .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#possiblePrefix
+
+:possiblePrefix a owl:ObjectProperty ;
+	rdfs:domain omn-monitoring:Unit ;
+	rdfs:range :Prefix .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#base
+
+:base a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain :Prefix .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#exponent
+
+:exponent a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid4 .
+
+_:genid4 a owl:Class ;
+	owl:unionOf _:genid7 .
+
+_:genid7 a rdf:List ;
+	rdf:first :PowerDimension ;
+	rdf:rest _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first :PowerUnit ;
+	rdf:rest _:genid5 .
+
+_:genid5 a rdf:List ;
+	rdf:first :Prefix ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#forwardExpression
+
+:forwardExpression a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :regexp ;
+	a owl:FunctionalProperty .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#hasValue
+
+:hasValue a owl:DatatypeProperty .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#inverseExpression
+
+:inverseExpression a owl:DatatypeProperty ;
+	rdfs:subPropertyOf :regexp ;
+	a owl:FunctionalProperty .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#offset
+
+:offset a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain :LinearTransformedUnit ;
+	rdfs:range xsd:double .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#regexp
+
+:regexp a owl:DatatypeProperty ;
+	rdfs:domain :RegexpTransformedUnit ;
+	rdfs:range xsd:string ;
+	rdfs:comment """An abstraction of any arbitrary function that can be expressed by regular expressions. The format can be of the following two forms:
+
+  I.   /evalInteger/expresion/operation/
+  II.  /evalIntegerAsString/expression/operation/separator/[...],
+
+where [...] stands for a series of operation/separator/ with n repetition.
+
+\"expression\": is a regular expression, which contains grouping eclosed by parenthesis, like \"([0-9]*)\". These groups are referenced by \"\\g<?>\" within the operation field, where question mark represents the sequence number of the group referenced, starting with 1.
+
+\"operation\": is a mathematical form that may contain operations understood by eval method. For instance: \"+, -, *, /, >>\", etc. 
+
+\"separator\": is the piece of string to be appended to the result of an evaluation, which is already transformed a string.
+
+An example:
+Given a function that maps: {apple1 |-> 10, apple2 |-> 20, ...} can be expressed as follows:
+
+/evalInteger/alma([0-9]*)/10*(\\g<1>)/
+
+
+
+Another example:
+Given a function that maps: { 11 |-> 1d2u, 32 |-> 3d4u, ...} can be expressed as follows:
+
+/evalIntegerAsString/([0-9])([0-9])/(\\g<1>)/d/2*(\\g<2>)/u/""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#scale
+
+:scale a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid8 .
+
+_:genid8 a owl:Class ;
+	owl:unionOf _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first :LinearTransformedUnit ;
+	rdf:rest _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first :Prefix ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#symbol
+
+:symbol a owl:DatatypeProperty , owl:FunctionalProperty ;
+	rdfs:domain _:genid11 .
+
+_:genid11 a owl:Class ;
+	owl:unionOf _:genid13 .
+
+_:genid13 a rdf:List ;
+	rdf:first omn-monitoring:Unit ;
+	rdf:rest _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first :Prefix ;
+	rdf:rest rdf:nil .
+
+:symbol rdfs:range xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Data
+
+omn-monitoring:Data a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-monitoring#Unit
+
+omn-monitoring:Unit a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-data#MeasurementData
+
+omn-monitoring-data:MeasurementData a owl:Class .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#BaseDimension
+
+:BaseDimension a owl:Class ;
+	rdfs:subClassOf :Dimension ;
+	owl:disjointWith :DerivedDimension .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#BaseUnit
+
+:BaseUnit a owl:Class ;
+	rdfs:subClassOf omn-monitoring:Unit ;
+	rdfs:comment "Base units are the simplest unit forms, independent of each other, and they are the profound building blocks for derived units." .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#BinaryPrefix
+
+:BinaryPrefix a owl:Class ;
+	rdfs:subClassOf :Prefix , _:genid14 .
+
+_:genid14 a owl:Restriction ;
+	owl:onProperty :base ;
+	owl:hasValue "2"^^xsd:integer .
+
+:BinaryPrefix owl:disjointWith :DecimalPrefix ;
+	rdfs:comment """In computing, a binary prefix is a specifier or mnemonic that is prepended to the units of digital information, the bit and the byte, to indicate multiplication by a power of 2. In practice the powers used are multiples of 10, so the prefixes denote powers of 1024 = 2^10.
+
+Starting in about 1998, a number of standards and trade organizations approved standards and recommendations for a new set of binary prefixes, proposed earlier by the International Electrotechnical Commission (IEC), that would refer unambiguously to powers of 1024. According to these, the SI prefixes would only be used in the decimal sense, even when referring to data storage capacities: kilobyte and megabyte would denote one thousand bytes and one million bytes respectively (consistent with SI), while new terms such as kibibyte, mebibyte and gibibyte, abbreviated KiB, MiB, and GiB, would denote 1024 bytes, 1048576 bytes, and 1073741824 bytes respectively.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Cardinal
+
+:Cardinal a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :NominalLevel , _:genid15 .
+
+_:genid15 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :unitless .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Countable
+
+:Countable a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :RatioLevel , _:genid16 .
+
+_:genid16 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :piece .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#DecimalPrefix
+
+:DecimalPrefix a owl:Class ;
+	rdfs:subClassOf :Prefix , _:genid17 .
+
+_:genid17 a owl:Restriction ;
+	owl:onProperty :base ;
+	owl:hasValue "10"^^xsd:integer .
+
+:DecimalPrefix rdfs:comment """A prefix that precedes a basic unit of measure to indicate a decadic multiple or fraction of the unit.
+
+The prefix kilo-, for example, may be added to gram to indicate multiplication by one thousand; one kilogram is equal to one thousand grams (1 km = 1000 m). The prefix centi-, likewise, may be added to metre to indicate division by one hundred; one centimetre is equal to one hundredth of a metre (1 cm = 0.01 m).""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#DerivedDimension
+
+:DerivedDimension a owl:Class ;
+	rdfs:subClassOf :Dimension .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#DifferenceDimension
+
+:DifferenceDimension a owl:Class ;
+	rdfs:subClassOf :DerivedDimension , _:genid18 .
+
+_:genid18 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+	owl:onClass :IntervalLevel .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Dimension
+
+:Dimension a owl:Class ;
+	rdfs:subClassOf _:genid19 .
+
+_:genid19 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass omn-monitoring:Unit .
+
+:Dimension rdfs:subClassOf _:genid20 .
+
+_:genid20 a owl:Restriction ;
+	owl:onProperty omn-monitoring:hasUnit ;
+	owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass omn-monitoring:Unit .
+
+:Dimension rdfs:subClassOf _:genid21 .
+
+_:genid21 a owl:Restriction ;
+	owl:onProperty :hasPrefix ;
+	owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Prefix .
+
+:Dimension rdfs:subClassOf _:genid22 .
+
+_:genid22 a owl:Restriction ;
+	owl:onProperty :hasValue ;
+	owl:maxCardinality "1"^^xsd:nonNegativeInteger .
+
+:Dimension rdfs:comment """Numbers are meaningless for the physicist without the correct use of units. It makes no sense to say \"the distance from my house to school is two\", unless we follow that statement with \"miles\" or \"kilometers\", or whichever unit makes the statement true. 
+
+We will distinguish between dimension, the abstract quality of a measurement without scale (ie., length), and unit, the quality of a number which specifies a previously agreed upon scale (ie., meters). While dimensional arguments are of primary importance in understanding the qualitative behavior of systems, the use of units are necessary for the predictions we seek.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Frequency
+
+:Frequency a owl:Class ;
+	rdfs:subClassOf :PowerDimension , :RatioLevel , _:genid23 .
+
+_:genid23 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :persecond .
+
+:Frequency rdfs:subClassOf _:genid24 .
+
+_:genid24 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :TimeInterval .
+
+:Frequency rdfs:subClassOf _:genid25 .
+
+_:genid25 a owl:Restriction ;
+	owl:onProperty :exponent ;
+	owl:hasValue "-1"^^xsd:integer .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#GeoPosition
+
+:GeoPosition a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :NominalLevel , _:genid26 .
+
+_:genid26 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :radian .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#IPAddress
+
+:IPAddress a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :NominalLevel , _:genid27 .
+
+_:genid27 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :ipv4dotted .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#InformationLossRatio
+
+:InformationLossRatio a owl:Class ;
+	rdfs:subClassOf :RatioDimension , :RatioLevel , _:genid28 .
+
+_:genid28 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :unitless .
+
+:InformationLossRatio rdfs:subClassOf _:genid29 .
+
+_:genid29 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :InformationSize .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#InformationRate
+
+:InformationRate a owl:Class ;
+	rdfs:subClassOf :ProductDimension , :RatioLevel , _:genid30 .
+
+_:genid30 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :bitpersecond .
+
+:InformationRate rdfs:subClassOf _:genid31 .
+
+_:genid31 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Frequency .
+
+:InformationRate rdfs:subClassOf _:genid32 .
+
+_:genid32 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :InformationSize .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#InformationSize
+
+:InformationSize a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :RatioLevel , _:genid33 .
+
+_:genid33 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :bit .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#IntervalLevel
+
+:IntervalLevel a owl:Class ;
+	rdfs:subClassOf :OrdinalLevel ;
+	rdfs:comment """Quantitative attributes are all measurable on interval scales, as any difference between the levels of an attribute can be multiplied by any real number to exceed or equal another difference. A highly familiar example of interval scale measurement is temperature with the Celsius scale. In this particular scale, the unit of measurement is 1/100 of the temperature difference between the freezing and boiling points of water under a pressure of 1 atmosphere. The \"zero point\" on an interval scale is arbitrary; and negative values can be used. The formal mathematical term is an affine space (in this case an affine line). Variables measured at the interval level are called \"interval variables\" or sometimes \"scaled variables\" as they have units of measurement.
+
+Ratios between numbers on the scale are not meaningful, so operations such as multiplication and division cannot be carried out directly. But ratios of differences can be expressed; for example, one difference can be twice another.
+
+The central tendency of a variable measured at the interval level can be represented by its mode, its median, or its arithmetic mean. Statistical dispersion can be measured in most of the usual ways, which just involved differences or averaging, such as range, interquartile range, and standard deviation. Since one cannot divide, one cannot define measures that require a ratio, such as studentized range or coefficient of variation. More subtly, while one can define moments about the origin, only central moments are useful, since the choice of origin is arbitrary and not meaningful. One can define standardized moments, since ratios of differences are meaningful, but one cannot define coefficient of variation, since the mean is a moment about the origin, unlike the standard deviation, which is (the square root of) a central moment.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#LinearTransformedUnit
+
+:LinearTransformedUnit a owl:Class ;
+	rdfs:subClassOf :UnaryUnit , _:genid34 .
+
+_:genid34 a owl:Restriction ;
+	owl:onProperty :scale ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:integer .
+
+:LinearTransformedUnit rdfs:subClassOf _:genid35 .
+
+_:genid35 a owl:Restriction ;
+	owl:onProperty :offset ;
+	owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:double .
+
+:LinearTransformedUnit rdfs:comment """LTU = scale * U + offset,
+
+where LTU stands for the linear transformed unit derived from U.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#MeasurementLevel
+
+:MeasurementLevel a owl:Class ;
+	rdfs:comment "The \"levels of measurement\" or scales of measure are expressions that typically refer to the theory of scale types developed by the psychologist Stanley Smith Stevens. Stevens proposed his theory in a 1946 Science article titled \"On the theory of scales of measurement\". In that article, Stevens claimed that all measurement in science was conducted using four different types of scales that he called \"nominal\", \"ordinal\", \"interval\" and \"ratio\"." .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#N_aryUnit
+
+:N_aryUnit a owl:Class ;
+	rdfs:subClassOf omn-monitoring:Unit ;
+	rdfs:comment "N-ary units are derived from more than one unit." .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#NameOfSomething
+
+:NameOfSomething a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :NominalLevel , _:genid36 .
+
+_:genid36 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :unitless .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#NominalLevel
+
+:NominalLevel a owl:Class ;
+	rdfs:subClassOf :MeasurementLevel ;
+	rdfs:comment """At the nominal scale, i.e., for a nominal category, one uses labels; for example, rocks can be generally categorized as igneous, sedimentary and metamorphic. For this scale, some valid operations are equivalence and set membership. Nominal measures offer names or labels for certain characteristics.
+
+Variables assessed on a nominal scale are called categorical variables. We can use a simple example of a nominal category: the destination port of an IP packet captured. For instance, looking at the destination port values we might find one or more of IP packets with a value 7777. In this scenario 7777 is their label. We can only check whether two packets' destination ports have the same label (equivalence) or whether a given label is in on a certain list of labels (set membership), but it is impossible to say which label is greater or less than another (comparison) or to measure the difference between two labels.
+
+Given a set of destination port numbers, we can describe the set by its most common label (the mode), but cannot provide an \"average label\" or even the \"middle label\" among all the names. However, if we decide to sort our labels numerically (or to sort them by how many times they appear in a measurement log), we will begin to turn this nominal scale into an ordinal scale.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#OrdinalLevel
+
+:OrdinalLevel a owl:Class ;
+	rdfs:subClassOf :NominalLevel ;
+	rdfs:comment """Rank-ordering data simply puts the data on an ordinal scale. Ordinal measurements describe order, but not relative size or degree of difference between the items measured. In this scale type, the numbers assigned to objects or events represent the rank order (1st, 2nd, 3rd, etc.) of the entities assessed. An example of an ordinal scale is the result of a horse race, which says only which horses arrived first, second, or third but include no information about race times. 
+
+When using an ordinal scale, the central tendency of a group of items can be described by using the group's mode (or most common item) or its median (the middle-ranked item), but the mean (or average) cannot be defined. Thus it is an error to write that an IQ of 160 is just as different from an IQ of 130 as an IQ of 100 is different from an IQ of 70.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#PointInTime
+
+:PointInTime a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :IntervalLevel , _:genid37 .
+
+_:genid37 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :unixtimestamp .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#PowerDimension
+
+:PowerDimension a owl:Class ;
+	rdfs:subClassOf :DerivedDimension , _:genid38 .
+
+_:genid38 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :RatioLevel .
+
+:PowerDimension rdfs:subClassOf _:genid39 .
+
+_:genid39 a owl:Restriction ;
+	owl:onProperty :exponent ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:integer .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#PowerUnit
+
+:PowerUnit a owl:Class ;
+	rdfs:subClassOf :UnaryUnit , _:genid40 .
+
+_:genid40 a owl:Restriction ;
+	owl:onProperty :exponent ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:integer .
+
+:PowerUnit rdfs:comment """PU = U^exponent,
+
+where PU power unit is derived from U unit.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Prefix
+
+:Prefix a owl:Class ;
+	rdfs:subClassOf _:genid41 .
+
+_:genid41 a owl:Restriction ;
+	owl:onProperty :base ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:integer .
+
+:Prefix rdfs:subClassOf _:genid42 .
+
+_:genid42 a owl:Restriction ;
+	owl:onProperty :exponent ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:integer .
+
+:Prefix rdfs:comment """A metric prefix or SI prefix is a unit prefix that precedes a basic unit of measure to indicate a decadic multiple or fraction or or binary multiple of the unit. Each prefix has a unique symbol that is prepended to the unit symbol. 
+
+The use of multiple prefixes are disallowed.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Probability
+
+:Probability a owl:Class ;
+	rdfs:subClassOf :RatioDimension , :RatioLevel , _:genid43 .
+
+_:genid43 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :unitless .
+
+:Probability rdfs:subClassOf _:genid44 .
+
+_:genid44 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Countable .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#ProductDimension
+
+:ProductDimension a owl:Class ;
+	rdfs:subClassOf :DerivedDimension , _:genid45 .
+
+_:genid45 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+	owl:onClass _:genid46 .
+
+_:genid46 a owl:Class ;
+	owl:unionOf _:genid48 .
+
+_:genid48 a rdf:List ;
+	rdf:first :BaseDimension ;
+	rdf:rest _:genid47 .
+
+_:genid47 a rdf:List ;
+	rdf:first :PowerDimension ;
+	rdf:rest rdf:nil .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#ProductUnit
+
+:ProductUnit a owl:Class ;
+	rdfs:subClassOf :N_aryUnit , _:genid49 .
+
+_:genid49 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+	owl:onClass omn-monitoring:Unit .
+
+:ProductUnit rdfs:comment """ProdU = U1 * U2 [... * Ui],
+
+where ProdU product unit is derived from multiplying units Ui.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#RatioDimension
+
+:RatioDimension a owl:Class ;
+	rdfs:subClassOf :DerivedDimension , _:genid50 .
+
+_:genid50 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :RatioLevel .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#RatioLevel
+
+:RatioLevel a owl:Class ;
+	rdfs:subClassOf :IntervalLevel ;
+	rdfs:comment """Most measurement in the physical sciences and engineering is done on ratio scales. Mass, length, time, plane angle, energy and electric charge are examples of physical measures that are ratio scales. The scale type takes its name from the fact that measurement is the estimation of the ratio between a magnitude of a continuous quantity and a unit magnitude of the same kind (Michell, 1997, 1999). Informally, the distinguishing feature of a ratio scale is the possession of a zero value. For example, the Kelvin temperature scale has a non-arbitrary zero point of absolute zero, which is denoted 0K and is equal to -273.15 degrees Celsius. This zero point is accuracy representing the particles that compose matter at this temperature having zero kinetic energy.
+
+All statistical measures can be used for a variable measured at the ratio level, as all necessary mathematical operations are defined. The central tendency of a variable measured at the ratio level can be represented by, in addition to its mode, its median, or its arithmetic mean, also its geometric mean or harmonic mean. In addition to the measures of statistical dispersion defined for interval variables, such as range and standard deviation, for ratio variables one can also define measures that require a ratio, such as studentized range or coefficient of variation.""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#RegexpTransformedUnit
+
+:RegexpTransformedUnit a owl:Class ;
+	rdfs:subClassOf :UnaryUnit , _:genid51 .
+
+_:genid51 a owl:Restriction ;
+	owl:onProperty :forwardExpression ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:string .
+
+:RegexpTransformedUnit rdfs:subClassOf _:genid52 .
+
+_:genid52 a owl:Restriction ;
+	owl:onProperty :inverseExpression ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onDataRange xsd:string .
+
+:RegexpTransformedUnit rdfs:comment """This kind of unit is a made-up unary type. The idea behind is that most of the complex functions can be represented as a series of operations based on regular expressions.
+
+RTU = Fforward(U)
+U = Finverse(RTU)""" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Temperature
+
+:Temperature a owl:Class ;
+	rdfs:subClassOf :BaseDimension , :RatioLevel , _:genid53 .
+
+_:genid53 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :kelvin .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#TimeInterval
+
+:TimeInterval a owl:Class ;
+	rdfs:subClassOf :DifferenceDimension , :RatioLevel , _:genid54 .
+
+_:genid54 a owl:Restriction ;
+	owl:onProperty :defaultUnit ;
+	owl:hasValue :second .
+
+:TimeInterval rdfs:subClassOf _:genid55 .
+
+_:genid55 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+	owl:onClass :PointInTime .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#UnaryUnit
+
+:UnaryUnit a owl:Class ;
+	rdfs:subClassOf omn-monitoring:Unit , _:genid56 .
+
+_:genid56 a owl:Restriction ;
+	owl:onProperty :derivedFrom ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass omn-monitoring:Unit .
+
+:UnaryUnit rdfs:comment "Unary unit is a derivative of a single unit." .
+# 
+# http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkParameter
+
+<http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkParameter> a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Byte
+
+:Byte a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :bit ;
+	:possiblePrefix :Gibi , :Kibi , :Mebi , :Tebi , :giga , :kilo , :mega ;
+	:scale "8"^^xsd:integer ;
+	:symbol "B" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Bytepersecond
+
+:Bytepersecond a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :bitpersecond ;
+	:possiblePrefix :giga , :kilo , :mega ;
+	:scale "8"^^xsd:integer ;
+	:symbol "Bps" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Gibi
+
+:Gibi a owl:NamedIndividual , :BinaryPrefix ;
+	:base "2"^^xsd:integer ;
+	:exponent "30"^^xsd:integer ;
+	:symbol "Gi" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Kibi
+
+:Kibi a owl:NamedIndividual , :BinaryPrefix ;
+	:base "2"^^xsd:integer ;
+	:exponent "10"^^xsd:integer ;
+	:symbol "K" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Mebi
+
+:Mebi a owl:NamedIndividual , :BinaryPrefix ;
+	:base "2"^^xsd:integer ;
+	:exponent "20"^^xsd:integer ;
+	:symbol "Mi" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#Tebi
+
+:Tebi a owl:NamedIndividual , :BinaryPrefix ;
+	:base "2"^^xsd:integer ;
+	:exponent "40"^^xsd:integer ;
+	:symbol "Ti" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#bit
+
+:bit a owl:NamedIndividual , :BaseUnit ;
+	:possiblePrefix :giga , :kilo , :mega ;
+	:symbol "bit" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#bitpersecond
+
+:bitpersecond a owl:NamedIndividual , :ProductUnit ;
+	:derivedFrom :bit , :persecond ;
+	:possiblePrefix :giga , :kilo , :mega ;
+	:symbol "bps" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#celsius
+
+:celsius a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :kelvin ;
+	:offset "273.15"^^xsd:double ;
+	:scale "1"^^xsd:integer ;
+	:symbol "C" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#day
+
+:day a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :second ;
+	:scale "86400"^^xsd:integer .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#deco
+
+:deco a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "1"^^xsd:integer ;
+	:symbol "da" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#dozen
+
+:dozen a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :piece ;
+	:scale "12"^^xsd:integer ;
+	:symbol "dozen" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#fraction
+
+:fraction a owl:NamedIndividual , :BaseUnit ;
+	:symbol "" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#giga
+
+:giga a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "9"^^xsd:integer ;
+	:symbol "G" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#hecto
+
+:hecto a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "2"^^xsd:integer ;
+	:symbol "h" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#hour
+
+:hour a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :second ;
+	:scale "3600"^^xsd:integer ;
+	:symbol "h" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#ipv4dotted
+
+:ipv4dotted a owl:NamedIndividual , :BaseUnit ;
+	:symbol "" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#ipv4int
+
+:ipv4int a owl:NamedIndividual , :RegexpTransformedUnit ;
+	:derivedFrom :ipv4dotted ;
+	:forwardExpression "/evalIntegerAsString/([0-9]*)/((\\g<1>) & (255 << 24)) >> 24/./((\\g<1>) & (255 << 16)) >> 16/./((\\g<1>) & (255 << 8)) >> 8/./(\\g<1>) & 255//" ;
+	:inverseExpression "/evalInteger/(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/(\\g<1>) << 24 | (\\g<2>) << 16 | (\\g<3>) << 8 | (\\g<4>)/" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#ipv6dotted
+
+:ipv6dotted a owl:NamedIndividual , :BaseUnit ;
+	:symbol "" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#ipv6int
+
+:ipv6int a owl:NamedIndividual , :RegexpTransformedUnit ;
+	:derivedFrom :ipv6dotted ;
+	:forwardExpression "/evalIntegerAsString/([0-9]*)/hex(((\\g<1>) & 0xFFFF0000000000000000000000000000) >> 112)/:/hex(((\\g<1>) & 0xFFFF000000000000000000000000) >> 96)/:/hex(((\\g<1>) & 0xFFFF00000000000000000000) >> 80)/:/hex(((\\g<1>) & 0xFFFF0000000000000000) >> 64)/:/hex(((\\g<1>) & 0xFFFF000000000000) >> 48)/:/hex(((\\g<1>) & 0xFFFF00000000) >> 32)/:/hex(((\\g<1>) & 0xFFFF0000) >> 16)/:/hex((\\g<1>) & 0xFFFF)//" ;
+	:inverseExpression "/evalInteger/([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4}):([0-9a-fA-F]{0,4})/(0x\\g<1>)<<112|(0x\\g<2>)<<96|(0x\\g<3>)<<80|(0x\\g<4>)<<64|(0x\\g<5>)<<48|(0x\\g<6>)<<32|(0x\\g<7>)<<16|(0x\\g<8>)/" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#kelvin
+
+:kelvin a owl:NamedIndividual , :BaseUnit ;
+	:symbol "K" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#kilo
+
+:kilo a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "3"^^xsd:integer ;
+	:symbol "k" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#mega
+
+:mega a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "6"^^xsd:integer ;
+	:symbol "M" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#micro
+
+:micro a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "-6"^^xsd:integer ;
+	:symbol "mu" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#milli
+
+:milli a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "-3"^^xsd:integer ;
+	:symbol "m" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#minute
+
+:minute a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :second ;
+	:scale "60"^^xsd:integer ;
+	:symbol "min" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#month
+
+:month a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :second ;
+	:scale "1814400"^^xsd:integer .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#nano
+
+:nano a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "-9"^^xsd:integer ;
+	:symbol "n" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#percent
+
+:percent a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :fraction ;
+	:scale "100"^^xsd:integer ;
+	:symbol "%" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#permil
+
+:permil a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :fraction ;
+	:scale "1000"^^xsd:integer .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#persecond
+
+:persecond a owl:NamedIndividual , :PowerUnit ;
+	:derivedFrom :second ;
+	:possiblePrefix :giga , :kilo , :mega ;
+	:exponent "-1"^^xsd:integer ;
+	:symbol "Hz" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#pico
+
+:pico a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "-12"^^xsd:integer ;
+	:symbol "p" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#piece
+
+:piece a owl:NamedIndividual , :BaseUnit ;
+	:symbol "(1)" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#radian
+
+:radian a owl:NamedIndividual , :BaseUnit .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#second
+
+:second a owl:NamedIndividual , :BaseUnit ;
+	:possiblePrefix :micro , :milli , :nano , :pico ;
+	:symbol "s" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#tera
+
+:tera a owl:NamedIndividual , :DecimalPrefix ;
+	:base "10"^^xsd:integer ;
+	:exponent "12"^^xsd:integer ;
+	:symbol "T" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#unitless
+
+:unitless a owl:NamedIndividual , :BaseUnit ;
+	:symbol "" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#unixtimestamp
+
+:unixtimestamp a owl:NamedIndividual , :BaseUnit ;
+	:possiblePrefix :nano ;
+	:symbol "s" .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#week
+
+:week a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :second ;
+	:scale "604800"^^xsd:integer .
+# 
+# http://open-multinet.info/ontology/omn-monitoring-unit#year
+
+:year a owl:NamedIndividual , :LinearTransformedUnit ;
+	:derivedFrom :second ;
+	:scale "6622560000"^^xsd:integer .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+
+_:genid57 a owl:AllDisjointClasses ;
+	owl:members _:genid60 .
+
+_:genid60 a rdf:List ;
+	rdf:first :BaseUnit ;
+	rdf:rest _:genid59 .
+
+_:genid59 a rdf:List ;
+	rdf:first :N_aryUnit ;
+	rdf:rest _:genid58 .
+
+_:genid58 a rdf:List ;
+	rdf:first :UnaryUnit ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid61 a owl:AllDisjointClasses ;
+	owl:members _:genid69 .
+
+_:genid69 a rdf:List ;
+	rdf:first :Cardinal ;
+	rdf:rest _:genid68 .
+
+_:genid68 a rdf:List ;
+	rdf:first :Countable ;
+	rdf:rest _:genid67 .
+
+_:genid67 a rdf:List ;
+	rdf:first :GeoPosition ;
+	rdf:rest _:genid66 .
+
+_:genid66 a rdf:List ;
+	rdf:first :IPAddress ;
+	rdf:rest _:genid65 .
+
+_:genid65 a rdf:List ;
+	rdf:first :InformationSize ;
+	rdf:rest _:genid64 .
+
+_:genid64 a rdf:List ;
+	rdf:first :NameOfSomething ;
+	rdf:rest _:genid63 .
+
+_:genid63 a rdf:List ;
+	rdf:first :PointInTime ;
+	rdf:rest _:genid62 .
+
+_:genid62 a rdf:List ;
+	rdf:first :Temperature ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid70 a owl:AllDisjointClasses ;
+	owl:members _:genid74 .
+
+_:genid74 a rdf:List ;
+	rdf:first :DifferenceDimension ;
+	rdf:rest _:genid73 .
+
+_:genid73 a rdf:List ;
+	rdf:first :PowerDimension ;
+	rdf:rest _:genid72 .
+
+_:genid72 a rdf:List ;
+	rdf:first :ProductDimension ;
+	rdf:rest _:genid71 .
+
+_:genid71 a rdf:List ;
+	rdf:first :RatioDimension ;
+	rdf:rest rdf:nil .
+# 
+
+_:genid75 a owl:AllDisjointClasses ;
+	owl:members _:genid78 .
+
+_:genid78 a rdf:List ;
+	rdf:first :LinearTransformedUnit ;
+	rdf:rest _:genid77 .
+
+_:genid77 a rdf:List ;
+	rdf:first :PowerUnit ;
+	rdf:rest _:genid76 .
+
+_:genid76 a rdf:List ;
+	rdf:first :RegexpTransformedUnit ;
+	rdf:rest rdf:nil .
+# 
+# Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,66 @@
+2017-10-19 14:20:00,013 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-10-19 14:20:00,013 - *******************************************************************
+2017-10-19 14:20:00,013 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-10-19 14:20:00,013 - RuntimeInstance initializing.
+2017-10-19 14:20:00,013 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-10-19 14:20:00,013 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-10-19 14:20:00,014 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-10-19 14:20:00,017 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-10-19 14:20:00,019 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-19 14:20:00,020 - ClasspathResourceLoader : initialization complete.
+2017-10-19 14:20:00,037 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-10-19 14:20:00,037 - Default ResourceManager initialization complete.
+2017-10-19 14:20:00,039 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-10-19 14:20:00,040 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-10-19 14:20:00,041 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-10-19 14:20:00,043 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-10-19 14:20:00,044 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-10-19 14:20:00,074 - Created '20' parsers.
+2017-10-19 14:20:00,084 - Velocimacro : initialization starting.
+2017-10-19 14:20:00,084 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-10-19 14:20:00,085 - Velocimacro : Default library not found.
+2017-10-19 14:20:00,085 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-10-19 14:20:00,085 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-10-19 14:20:00,085 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-10-19 14:20:00,085 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-10-19 14:20:00,085 - Velocimacro : Velocimacro : initialization complete.
+2017-10-19 14:20:00,085 - RuntimeInstance successfully initialized.
+2017-10-19 14:20:00,099 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-10-19 14:20:00,100 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-10-19 14:20:00,101 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-10-19 14:20:00,104 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-10-19 14:20:00,105 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-10-19 14:20:00,161 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-19 14:27:40,915 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-10-19 14:27:40,921 - *******************************************************************
+2017-10-19 14:27:40,922 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-10-19 14:27:40,922 - RuntimeInstance initializing.
+2017-10-19 14:27:40,922 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-10-19 14:27:40,922 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-10-19 14:27:40,922 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-10-19 14:27:40,924 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-10-19 14:27:40,927 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-19 14:27:40,928 - ClasspathResourceLoader : initialization complete.
+2017-10-19 14:27:40,961 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-10-19 14:27:40,961 - Default ResourceManager initialization complete.
+2017-10-19 14:27:40,962 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-10-19 14:27:40,964 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-10-19 14:27:40,965 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-10-19 14:27:40,966 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-10-19 14:27:40,967 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-10-19 14:27:41,043 - Created '20' parsers.
+2017-10-19 14:27:41,052 - Velocimacro : initialization starting.
+2017-10-19 14:27:41,052 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-10-19 14:27:41,052 - Velocimacro : Default library not found.
+2017-10-19 14:27:41,052 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-10-19 14:27:41,052 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-10-19 14:27:41,052 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-10-19 14:27:41,052 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-10-19 14:27:41,052 - Velocimacro : Velocimacro : initialization complete.
+2017-10-19 14:27:41,053 - RuntimeInstance successfully initialized.
+2017-10-19 14:27:41,075 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-10-19 14:27:41,076 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-10-19 14:27:41,076 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-10-19 14:27:41,079 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-10-19 14:27:41,080 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-10-19 14:27:41,149 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader

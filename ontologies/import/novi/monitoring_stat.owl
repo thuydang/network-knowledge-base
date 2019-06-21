@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://fp7-novi.eu/monitoring_stat.owl#"
+     xml:base="http://fp7-novi.eu/monitoring_stat.owl"
+     xmlns:unit="http://fp7-novi.eu/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/monitoring_stat.owl">
+        <owl:imports rdf:resource="http://fp7-novi.eu/unit.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#hasAggregate -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#hasAggregate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#hasCondition">
+        <rdfs:range rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#hasSample -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#hasSample">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#nextOperation -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#nextOperation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#SampleOperator"/>
+        <rdfs:range rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#SampleOperator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#aggregateScale -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#aggregateScale">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#AggregateOfSamples"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#percentile -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#percentile">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Percentile"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#sampleSize -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#sampleSize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#sampleThreshold -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/monitoring_stat.owl#sampleThreshold">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Aggregate -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Aggregate">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#AggregateOfSamples -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#AggregateOfSamples">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#sampleSize"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#nextOperation"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#aggregateScale"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Aggregator -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Aggregator">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#SampleOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#AndExpression -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#AndExpression">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#hasCondition"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Average -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Average">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Condition -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Condition">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Head -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Head">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#IndexResampler"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#sampleSize"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#IndexResampler -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#IndexResampler">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Resampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#IsNotnegative -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#IsNotnegative">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#hasAggregate"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#IsPositive -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#IsPositive">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#hasAggregate"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#LargerThan -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#LargerThan">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#ValueSampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Maximum -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Maximum">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Minimum -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Minimum">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#NotLargerThan -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#NotLargerThan">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#ValueSampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#NotSmallerThan -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#NotSmallerThan">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#ValueSampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#OrExpression -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#OrExpression">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#hasCondition"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Order -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Order">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#IndexResampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Percentile -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Percentile">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#percentile"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Resampler -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Resampler">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#SampleOperator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#ReverseOrder -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#ReverseOrder">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#IndexResampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#SampleOperator -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#SampleOperator"/>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Shuffle -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Shuffle">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#IndexResampler"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#sampleSize"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#SmallerThan -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#SmallerThan">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#ValueSampler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#SumOfAggregates -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#SumOfAggregates">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#hasAggregate"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregate"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Tail -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Tail">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#IndexResampler"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#sampleSize"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#ValueSampler -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#ValueSampler">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Resampler"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#sampleThreshold"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#Variance -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/monitoring_stat.owl#Variance">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Aggregator"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_stat.owl#median -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoring_stat.owl#median">
+        <rdf:type rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#Percentile"/>
+        <percentile>.5</percentile>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

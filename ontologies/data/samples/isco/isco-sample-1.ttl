@@ -1,0 +1,227 @@
+@prefix : <http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#> .
+@prefix omn: <http://open-multinet.info/ontology/omn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix netmode: <http://www.semanticweb.org/mary/ontologies/2015/0/untitled-ontology-157#> .
+@prefix omn-policy: <http://open-multinet.info/ontology/omn-policy#> .
+@prefix omn-service: <http://open-multinet.info/ontology/omn-service#> .
+@prefix omn-resource: <http://open-multinet.info/ontology/omn-resource#> .
+@prefix omn-lifecycle: <http://open-multinet.info/ontology/omn-lifecycle#> .
+@prefix omn-domain-nfv: <http://open-multinet.info/ontology/omn-domain-nfv#> .
+@prefix novipolicyservice: <http://fp7-novi.eu/NOVIPolicyService.owl#> .
+@base <http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1> .
+
+<http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1> rdf:type owl:Ontology ;
+                                                                             owl:imports <http://open-multinet.info/ontology/omn-policy> ,
+                                                                                         <http://ontology/omn-resource> ,
+                                                                                         <http://fp7-novi.eu/NOVIPolicyService.owl> ,
+                                                                                         <http://www.w3.org/2006/time> ,
+                                                                                         <http://open-multinet.info/ontology/omn-domain-nfv> ,
+                                                                                         <http://ontology/omn> ,
+                                                                                         <http://ontology/omn-lifecycle> ,
+                                                                                         <http://open-multinet.info/ontology/omn-service> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://open-multinet.info/ontology/omn#hasResource
+omn:hasResource rdf:type owl:AnnotationProperty ;
+                rdfs:range omn:Resource .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://open-multinet.info/ontology/omn#hasReservation
+omn:hasReservation rdf:type owl:ObjectProperty .
+
+
+###  http://open-multinet.info/ontology/omn#hasResource
+omn:hasResource rdf:type owl:ObjectProperty ;
+                rdfs:domain omn-lifecycle:Offering .
+
+
+###  http://open-multinet.info/ontology/omn-lifecycle#hasReservationState
+omn-lifecycle:hasReservationState rdf:type owl:ObjectProperty .
+
+
+###  http://open-multinet.info/ontology/omn-resource#hasInterface
+omn-resource:hasInterface rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://open-multinet.info/ontology/omn-lifecycle#hasID
+omn-lifecycle:hasID rdf:type owl:DatatypeProperty .
+
+
+###  http://open-multinet.info/ontology/omn-resource#isExclusive
+omn-resource:isExclusive rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://open-multinet.info/ontology/omn-lifecycle#Allocated
+omn-lifecycle:Allocated rdf:type owl:Class .
+
+
+###  http://open-multinet.info/ontology/omn-lifecycle#Offering
+omn-lifecycle:Offering rdf:type owl:Class .
+
+
+###  http://open-multinet.info/ontology/omn-lifecycle#Provisioned
+omn-lifecycle:Provisioned rdf:type owl:Class .
+
+
+###  http://open-multinet.info/ontology/omn-resource#Interface
+omn-resource:Interface rdf:type owl:Class .
+
+
+###  http://open-multinet.info/ontology/omn-resource#Node
+omn-resource:Node rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#allocated
+:allocated rdf:type owl:NamedIndividual ,
+                    omn-lifecycle:Allocated .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#dai-vm-01
+:dai-vm-01 rdf:type owl:NamedIndividual ,
+                    omn-domain-nfv:VM .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lfeend1
+:lfeend1 rdf:type owl:NamedIndividual ,
+                  time:Instant .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life1
+:life1 rdf:type owl:NamedIndividual ,
+                time:Interval ;
+       omn-lifecycle:hasReservationState :allocated ;
+       time:hasBeginning :lifestart1 ;
+       time:hasEnd :lfeend1 .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life2
+:life2 rdf:type owl:NamedIndividual ,
+                time:Interval ;
+       omn-lifecycle:hasReservationState :provisioned ;
+       time:hasBeginning :lifestart2 ;
+       time:hasEnd :lifeend2 .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#life3
+:life3 rdf:type owl:NamedIndividual ,
+                time:Interval ;
+       omn-lifecycle:hasReservationState :allocated ;
+       time:hasBeginning :lifestart3 ;
+       time:hasEnd :lifeend3 .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend2
+:lifeend2 rdf:type owl:NamedIndividual ,
+                   time:Instant .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifeend3
+:lifeend3 rdf:type owl:NamedIndividual ,
+                   time:Instant .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart1
+:lifestart1 rdf:type owl:NamedIndividual ,
+                     time:Instant .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart2
+:lifestart2 rdf:type owl:NamedIndividual ,
+                     time:Instant .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#lifestart3
+:lifestart3 rdf:type owl:NamedIndividual ,
+                     time:Instant .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#offering1
+:offering1 rdf:type owl:NamedIndividual ,
+                    omn-lifecycle:Offering ;
+           omn:hasResource :dai-vm-01 ,
+                           :omf.netmode.node1 ,
+                           :omf.netmode.node1_if1 ,
+                           :omf.netmode.node2 ,
+                           :omf.netmode.node2_if2 ,
+                           :omf.netmode.node3 ,
+                           :omf.netmode.node3_if3 .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1
+:omf.netmode.node1 rdf:type owl:NamedIndividual ,
+                            omn-resource:Node ;
+                   omn:hasReservation :life1 ,
+                                      :life2 ;
+                   omn-resource:hasInterface :omf.netmode.node1_if1 ;
+                   omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+node+omf.netmode.node1" ;
+                   omn-resource:isExclusive "true" .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node1_if1
+:omf.netmode.node1_if1 rdf:type owl:NamedIndividual ,
+                                omn-resource:Interface ;
+                       omn:hasReservation :life1 ,
+                                          :life2 ;
+                       omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+interface+omf.netmode.node1_if1" .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2
+:omf.netmode.node2 rdf:type owl:NamedIndividual ,
+                            omn-resource:Node ;
+                   omn-resource:hasInterface :omf.netmode.node2_if2 ;
+                   omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+node+omf.netmode.node2" ;
+                   omn-resource:isExclusive "true" .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node2_if2
+:omf.netmode.node2_if2 rdf:type owl:NamedIndividual ,
+                                omn-resource:Interface ;
+                       omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+interface+omf.netmode.node2_if2" .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3
+:omf.netmode.node3 rdf:type owl:NamedIndividual ,
+                            omn-resource:Node ;
+                   omn:hasReservation :life3 ;
+                   omn-resource:hasInterface :omf.netmode.node3_if3 ;
+                   omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+node+omf.netmode.node3" ;
+                   omn-resource:isExclusive "true" .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#omf.netmode.node3_if3
+:omf.netmode.node3_if3 rdf:type owl:NamedIndividual ,
+                                omn-resource:Interface ;
+                       omn:hasReservation :life3 ;
+                       omn-lifecycle:hasID "urn:publicid:IDN+omf:netmode+interface+omf.netmode.node3_if3" .
+
+
+###  http://www.gt-arc.com/network/management/ontologies/2017/10/isco-sample-1#provisioned
+:provisioned rdf:type owl:NamedIndividual ,
+                      omn-lifecycle:Provisioned .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://fp7-novi.eu/monitoring_query.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://fp7-novi.eu/monitoring_query.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="monitoring_query" IRI="http://fp7-novi.eu/monitoring_query.owl#"/>
+    <Prefix name="im" IRI="http://fp7-novi.eu/im.owl#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://fp7-novi.eu/monitoring_parameter.owl</Import>
+    <Import>http://fp7-novi.eu/monitoring_stat.owl</Import>
+    <Import>http://fp7-novi.eu/im.owl</Import>
+    <Import>http://fp7-novi.eu/monitoring_features.owl#</Import>
+    <Annotation>
+        <AnnotationProperty IRI="#author"/>
+        <Literal datatypeIRI="&xsd;string">Stéger, József (steger@complex.elte.hu)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&xsd;string">Part of the NOVI Information Model (IM). Defines and classifies concepts that are necessary to describe monitoring services, their parametrization and the representation of the results.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#author"/>
+        <Literal datatypeIRI="&xsd;string">Mátray, Péter (matray@complex.elte.hu)</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#BatchQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BundleQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitorQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitorQueryDefinitionPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QueryParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#BundleProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResource"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#author"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#BatchQuery"/>
+        <Class IRI="#MonitorQuery"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <Class IRI="#MonitorQuery"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasParameter"/>
+            <Class IRI="#QueryParameter"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFeature"/>
+            <Class IRI="http://fp7-novi.eu/monitoring_features.owl#MonitoredFeature"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasResource"/>
+            <Class abbreviatedIRI="im:Resource"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QueryParameter"/>
+        <Class IRI="http://fp7-novi.eu/monitoring_parameter.owl#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QueryParameter"/>
+        <Class IRI="#MonitorQueryDefinitionPart"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFeature"/>
+        <ObjectProperty IRI="#BundleProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasParameter"/>
+        <ObjectProperty IRI="#BundleProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasResource"/>
+        <ObjectProperty IRI="#BundleProperty"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFeature"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasResource"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFeature"/>
+        <Class IRI="#BundleQuery"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#BundleQuery"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResource"/>
+        <Class IRI="#BundleQuery"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFeature"/>
+        <Class IRI="http://fp7-novi.eu/monitoring_features.owl#MonitoredFeature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasParameter"/>
+        <Class IRI="#QueryParameter"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BatchQuery</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">not used yet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasResource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">here it links to the core ontology</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

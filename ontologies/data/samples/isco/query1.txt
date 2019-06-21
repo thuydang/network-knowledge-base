@@ -1,0 +1,20 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix omn: <http://open-multinet.info/ontology/omn#>
+prefix omn-resource: <http://open-multinet.info/ontology/omn-resource#>
+prefix omn-domain-nfv: <http://open-multinet.info/ontology/omn-domain-nfv#>
+prefix omn-lifecycle: <http://open-multinet.info/ontology/omn-lifecycle#> 
+prefix time:  <http://www.w3.org/2006/time#>
+prefix policy:  <http://www.gt-arc-com/network/management/ontologies/2017/9/policy-information-base#>
+prefix service:  <http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#>
+
+SELECT ?s ?p ?o ?classLabel
+	WHERE { 
+		
+		?s rdfs:subClassOf* policy:QosClass .
+		?s ?p ?o .
+		?s rdfs:label ?classLabel .
+		FILTER regex(?classLabel, "Class0", "i")
+	}

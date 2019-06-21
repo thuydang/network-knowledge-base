@@ -1,0 +1,17 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://xmlns.com/foaf/0.1/#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description>
+    <j.0:term_name xml:lang="en">Konrad Voelkel</j.0:term_name>
+    <j.0:term_name xml:lang="de">Konrad Völkel</j.0:term_name>
+    <j.0:term_icqChatID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+    >123</j.0:term_icqChatID>
+    <j.0:term_name>Konrad</j.0:term_name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xam.de/foaf.rdf.xml#i">
+    <j.0:term_name>Max Völkel</j.0:term_name>
+  </rdf:Description>
+</rdf:RDF>

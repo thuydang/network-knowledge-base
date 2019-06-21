@@ -1,0 +1,433 @@
+2017-10-27 14:12:32,466 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-10-27 14:12:32,469 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-10-27 14:12:32,469 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-10-27 14:12:32,533 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,566 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-10-27 14:12:32,567 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-10-27 14:12:32,568 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-10-27 14:12:32,608 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,612 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-10-27 14:12:32,613 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-10-27 14:12:32,613 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-10-27 14:12:32,614 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-10-27 14:12:32,629 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,647 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,661 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,667 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,671 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-10-27 14:12:32,671 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-10-27 14:12:32,672 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-10-27 14:12:32,707 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,709 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-10-27 14:12:32,710 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-10-27 14:12:32,710 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-10-27 14:12:32,710 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-10-27 14:12:32,723 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,731 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,746 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-10-27 14:12:32,752 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,296 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 17:01:05,297 - *******************************************************************
+2017-11-02 17:01:05,297 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 17:01:05,297 - RuntimeInstance initializing.
+2017-11-02 17:01:05,297 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 17:01:05,297 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 17:01:05,297 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 17:01:05,298 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 17:01:05,300 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,300 - ClasspathResourceLoader : initialization complete.
+2017-11-02 17:01:05,310 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 17:01:05,310 - Default ResourceManager initialization complete.
+2017-11-02 17:01:05,311 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 17:01:05,311 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 17:01:05,312 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 17:01:05,313 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 17:01:05,313 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 17:01:05,329 - Created '20' parsers.
+2017-11-02 17:01:05,333 - Velocimacro : initialization starting.
+2017-11-02 17:01:05,333 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 17:01:05,333 - Velocimacro : Default library not found.
+2017-11-02 17:01:05,333 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 17:01:05,334 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 17:01:05,334 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 17:01:05,334 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 17:01:05,334 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 17:01:05,334 - RuntimeInstance successfully initialized.
+2017-11-02 17:01:05,353 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 17:01:05,353 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 17:01:05,354 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 17:01:05,357 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 17:01:05,357 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 17:01:05,396 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,475 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,478 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 17:01:05,479 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 17:01:05,479 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 17:01:05,479 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 17:01:05,494 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,511 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,528 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,538 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:01:05,543 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:01:05,543 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:01:05,544 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:03:08,496 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 17:03:08,497 - *******************************************************************
+2017-11-02 17:03:08,497 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 17:03:08,497 - RuntimeInstance initializing.
+2017-11-02 17:03:08,497 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 17:03:08,497 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 17:03:08,497 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 17:03:08,499 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 17:03:08,500 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,501 - ClasspathResourceLoader : initialization complete.
+2017-11-02 17:03:08,507 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 17:03:08,507 - Default ResourceManager initialization complete.
+2017-11-02 17:03:08,508 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 17:03:08,509 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 17:03:08,509 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 17:03:08,510 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 17:03:08,510 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 17:03:08,525 - Created '20' parsers.
+2017-11-02 17:03:08,528 - Velocimacro : initialization starting.
+2017-11-02 17:03:08,528 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 17:03:08,529 - Velocimacro : Default library not found.
+2017-11-02 17:03:08,529 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 17:03:08,529 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 17:03:08,529 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 17:03:08,529 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 17:03:08,529 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 17:03:08,529 - RuntimeInstance successfully initialized.
+2017-11-02 17:03:08,536 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 17:03:08,537 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 17:03:08,537 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 17:03:08,540 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 17:03:08,541 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 17:03:08,578 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,666 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,670 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 17:03:08,670 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 17:03:08,671 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 17:03:08,671 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 17:03:08,685 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,709 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,724 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,729 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:03:08,735 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:03:08,735 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:03:08,736 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:51:52,431 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 17:51:52,460 - *******************************************************************
+2017-11-02 17:51:52,460 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 17:51:52,460 - RuntimeInstance initializing.
+2017-11-02 17:51:52,460 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 17:51:52,460 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 17:51:52,460 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 17:51:52,462 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 17:51:52,463 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,464 - ClasspathResourceLoader : initialization complete.
+2017-11-02 17:51:52,473 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 17:51:52,473 - Default ResourceManager initialization complete.
+2017-11-02 17:51:52,474 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 17:51:52,475 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 17:51:52,475 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 17:51:52,476 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 17:51:52,476 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 17:51:52,491 - Created '20' parsers.
+2017-11-02 17:51:52,494 - Velocimacro : initialization starting.
+2017-11-02 17:51:52,494 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 17:51:52,495 - Velocimacro : Default library not found.
+2017-11-02 17:51:52,495 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 17:51:52,495 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 17:51:52,495 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 17:51:52,495 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 17:51:52,495 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 17:51:52,495 - RuntimeInstance successfully initialized.
+2017-11-02 17:51:52,503 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 17:51:52,503 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 17:51:52,503 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 17:51:52,505 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 17:51:52,506 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 17:51:52,538 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,619 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,623 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 17:51:52,625 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 17:51:52,625 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 17:51:52,626 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 17:51:52,640 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,648 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,662 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,667 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:51:52,673 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:51:52,674 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:51:52,674 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:54:30,527 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 17:54:30,527 - *******************************************************************
+2017-11-02 17:54:30,527 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 17:54:30,527 - RuntimeInstance initializing.
+2017-11-02 17:54:30,527 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 17:54:30,527 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 17:54:30,527 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 17:54:30,529 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 17:54:30,530 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,530 - ClasspathResourceLoader : initialization complete.
+2017-11-02 17:54:30,537 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 17:54:30,537 - Default ResourceManager initialization complete.
+2017-11-02 17:54:30,538 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 17:54:30,538 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 17:54:30,539 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 17:54:30,540 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 17:54:30,540 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 17:54:30,555 - Created '20' parsers.
+2017-11-02 17:54:30,558 - Velocimacro : initialization starting.
+2017-11-02 17:54:30,559 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 17:54:30,559 - Velocimacro : Default library not found.
+2017-11-02 17:54:30,559 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 17:54:30,559 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 17:54:30,559 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 17:54:30,559 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 17:54:30,559 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 17:54:30,559 - RuntimeInstance successfully initialized.
+2017-11-02 17:54:30,566 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 17:54:30,566 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 17:54:30,567 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 17:54:30,569 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 17:54:30,570 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 17:54:30,609 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,710 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,715 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 17:54:30,716 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 17:54:30,717 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 17:54:30,717 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 17:54:30,733 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,742 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,757 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,762 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:30,768 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:54:30,769 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:54:30,769 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:54:50,237 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 17:54:50,238 - *******************************************************************
+2017-11-02 17:54:50,238 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 17:54:50,238 - RuntimeInstance initializing.
+2017-11-02 17:54:50,238 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 17:54:50,238 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 17:54:50,238 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 17:54:50,240 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 17:54:50,241 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,242 - ClasspathResourceLoader : initialization complete.
+2017-11-02 17:54:50,249 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 17:54:50,249 - Default ResourceManager initialization complete.
+2017-11-02 17:54:50,250 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 17:54:50,251 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 17:54:50,251 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 17:54:50,252 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 17:54:50,253 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 17:54:50,267 - Created '20' parsers.
+2017-11-02 17:54:50,271 - Velocimacro : initialization starting.
+2017-11-02 17:54:50,271 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 17:54:50,271 - Velocimacro : Default library not found.
+2017-11-02 17:54:50,271 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 17:54:50,271 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 17:54:50,271 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 17:54:50,272 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 17:54:50,272 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 17:54:50,272 - RuntimeInstance successfully initialized.
+2017-11-02 17:54:50,281 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 17:54:50,282 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 17:54:50,282 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 17:54:50,284 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 17:54:50,284 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 17:54:50,323 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,412 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,417 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 17:54:50,418 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 17:54:50,418 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 17:54:50,419 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 17:54:50,435 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,444 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,458 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,463 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 17:54:50,468 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:54:50,469 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 17:54:50,469 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:06:58,226 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 18:06:58,242 - *******************************************************************
+2017-11-02 18:06:58,242 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 18:06:58,242 - RuntimeInstance initializing.
+2017-11-02 18:06:58,242 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 18:06:58,242 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 18:06:58,242 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 18:06:58,244 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 18:06:58,245 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,246 - ClasspathResourceLoader : initialization complete.
+2017-11-02 18:06:58,253 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 18:06:58,253 - Default ResourceManager initialization complete.
+2017-11-02 18:06:58,253 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 18:06:58,254 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 18:06:58,255 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 18:06:58,256 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 18:06:58,256 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 18:06:58,270 - Created '20' parsers.
+2017-11-02 18:06:58,274 - Velocimacro : initialization starting.
+2017-11-02 18:06:58,274 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 18:06:58,274 - Velocimacro : Default library not found.
+2017-11-02 18:06:58,274 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 18:06:58,274 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 18:06:58,274 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 18:06:58,274 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 18:06:58,274 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 18:06:58,274 - RuntimeInstance successfully initialized.
+2017-11-02 18:06:58,281 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 18:06:58,282 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 18:06:58,282 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 18:06:58,284 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 18:06:58,284 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 18:06:58,317 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,416 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,420 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 18:06:58,421 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 18:06:58,422 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 18:06:58,422 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 18:06:58,438 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,447 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,461 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,467 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:06:58,473 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:06:58,473 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:06:58,474 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:10:14,675 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 18:10:14,675 - *******************************************************************
+2017-11-02 18:10:14,676 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 18:10:14,676 - RuntimeInstance initializing.
+2017-11-02 18:10:14,676 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 18:10:14,676 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 18:10:14,676 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 18:10:14,678 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 18:10:14,679 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,680 - ClasspathResourceLoader : initialization complete.
+2017-11-02 18:10:14,690 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 18:10:14,690 - Default ResourceManager initialization complete.
+2017-11-02 18:10:14,691 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 18:10:14,691 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 18:10:14,700 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 18:10:14,701 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 18:10:14,702 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 18:10:14,718 - Created '20' parsers.
+2017-11-02 18:10:14,722 - Velocimacro : initialization starting.
+2017-11-02 18:10:14,722 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 18:10:14,723 - Velocimacro : Default library not found.
+2017-11-02 18:10:14,723 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 18:10:14,723 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 18:10:14,723 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 18:10:14,723 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 18:10:14,723 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 18:10:14,723 - RuntimeInstance successfully initialized.
+2017-11-02 18:10:14,730 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 18:10:14,731 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 18:10:14,731 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 18:10:14,733 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 18:10:14,734 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 18:10:14,767 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,857 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,862 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 18:10:14,863 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 18:10:14,863 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 18:10:14,864 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 18:10:14,880 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,890 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,905 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,910 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:10:14,917 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:10:14,917 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:10:14,918 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:12:12,008 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 18:12:12,009 - *******************************************************************
+2017-11-02 18:12:12,009 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 18:12:12,009 - RuntimeInstance initializing.
+2017-11-02 18:12:12,009 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 18:12:12,009 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 18:12:12,009 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 18:12:12,012 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 18:12:12,014 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,015 - ClasspathResourceLoader : initialization complete.
+2017-11-02 18:12:12,025 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 18:12:12,026 - Default ResourceManager initialization complete.
+2017-11-02 18:12:12,027 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 18:12:12,028 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 18:12:12,029 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 18:12:12,030 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 18:12:12,031 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 18:12:12,055 - Created '20' parsers.
+2017-11-02 18:12:12,059 - Velocimacro : initialization starting.
+2017-11-02 18:12:12,059 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 18:12:12,060 - Velocimacro : Default library not found.
+2017-11-02 18:12:12,060 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 18:12:12,060 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 18:12:12,060 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 18:12:12,060 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 18:12:12,060 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 18:12:12,060 - RuntimeInstance successfully initialized.
+2017-11-02 18:12:12,067 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 18:12:12,068 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 18:12:12,068 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 18:12:12,071 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 18:12:12,071 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 18:12:12,106 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,210 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,213 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 18:12:12,214 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 18:12:12,214 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 18:12:12,215 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 18:12:12,230 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,239 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,255 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,260 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:12:12,266 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:12:12,267 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:12:12,267 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:17:17,421 - SimpleLog4JLogSystem initialized using logfile 'velocity.log'
+2017-11-02 18:17:17,421 - *******************************************************************
+2017-11-02 18:17:17,421 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2017-11-02 18:17:17,421 - RuntimeInstance initializing.
+2017-11-02 18:17:17,421 - Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+2017-11-02 18:17:17,421 - Trying to use logger class org.apache.velocity.runtime.log.SimpleLog4JLogSystem
+2017-11-02 18:17:17,421 - LogSystem has been deprecated. Please use a LogChute implementation.
+2017-11-02 18:17:17,423 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2017-11-02 18:17:17,424 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,425 - ClasspathResourceLoader : initialization complete.
+2017-11-02 18:17:17,431 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2017-11-02 18:17:17,431 - Default ResourceManager initialization complete.
+2017-11-02 18:17:17,432 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-11-02 18:17:17,432 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-11-02 18:17:17,433 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-11-02 18:17:17,434 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-11-02 18:17:17,434 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-11-02 18:17:17,450 - Created '20' parsers.
+2017-11-02 18:17:17,453 - Velocimacro : initialization starting.
+2017-11-02 18:17:17,453 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-11-02 18:17:17,454 - Velocimacro : Default library not found.
+2017-11-02 18:17:17,454 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-11-02 18:17:17,454 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-11-02 18:17:17,454 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-11-02 18:17:17,454 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-11-02 18:17:17,454 - Velocimacro : Velocimacro : initialization complete.
+2017-11-02 18:17:17,454 - RuntimeInstance successfully initialized.
+2017-11-02 18:17:17,461 - Velocimacro : added #mixedcase(  name ) : source = class.vm
+2017-11-02 18:17:17,461 - Velocimacro : added #lowercase(  name ) : source = class.vm
+2017-11-02 18:17:17,461 - Velocimacro : added #uppercase(  name ) : source = class.vm
+2017-11-02 18:17:17,464 - Velocimacro : added #comment(  indent name ) : source = class.vm
+2017-11-02 18:17:17,464 - Velocimacro : added #debug(  text ) : source = class.vm
+2017-11-02 18:17:17,497 - ResourceManager : found class.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,587 - ResourceManager : found get.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,591 - Null reference [template 'get.vm', line 235, column 38] : $type cannot be resolved.
+2017-11-02 18:17:17,593 - Null reference [template 'get.vm', line 247, column 35] : $type cannot be resolved.
+2017-11-02 18:17:17,593 - Null reference [template 'get.vm', line 257, column 38] : $type cannot be resolved.
+2017-11-02 18:17:17,594 - Null reference [template 'get.vm', line 267, column 35] : $type cannot be resolved.
+2017-11-02 18:17:17,610 - ResourceManager : found add.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,619 - ResourceManager : found set.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,633 - ResourceManager : found remove.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,638 - ResourceManager : found removeall.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2017-11-02 18:17:17,644 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:17:17,645 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]
+2017-11-02 18:17:17,645 - Left side ($name.getComment().length()) of '>' operation has null value. Operation not possible. class.vm [line 1, column 34]

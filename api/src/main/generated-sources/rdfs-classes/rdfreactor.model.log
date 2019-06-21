@@ -1,0 +1,65 @@
+
+JModel
+  JPackage com.gtarc.network.knowledgebase.model.rdfreactor
+    JClass Thing1 -> http://www.w3.org/2000/01/rdf-schema#Class
+      extends: org.ontoware.rdfreactor.schema.rdfs.Class, 
+      comment: This class acts as a catch-all for all properties, for which no domain has specified.
+      Beginning (-1/-1)  -> http://www.w3.org/2006/time#hasBeginning, types: 'Thing1',. Inverse: Beginning.
+      End (-1/-1)  -> http://www.w3.org/2006/time#hasEnd, types: 'Thing1',. Inverse: End.
+      ID (-1/-1)  -> http://open-multinet.info/ontology/omn-lifecycle#hasID, types: 'Thing1',. Inverse: ID.
+      Imports (-1/-1)  -> http://www.w3.org/2002/07/owl#imports, types: 'Thing1',. Inverse: Imports.
+      Interface (-1/-1)  -> http://open-multinet.info/ontology/omn-resource#hasInterface, types: 'Thing1',. Inverse: Interface.
+      IsExclusive (-1/-1)  -> http://open-multinet.info/ontology/omn-resource#isExclusive, types: 'Thing1',. Inverse: IsExclusive.
+      Provide (-1/-1)  -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#provide, types: 'Thing1',. Inverse: Provide.
+      Reservation (-1/-1)  -> http://open-multinet.info/ontology/omn#hasReservation, types: 'Thing1',. Inverse: Reservation.
+      ReservationState (-1/-1)  -> http://open-multinet.info/ontology/omn-lifecycle#hasReservationState, types: 'Thing1',. Inverse: ReservationState.
+      Type (-1/-1)  -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#hasType, types: 'Thing1',. Inverse: Type.
+    JClass NamedIndividual -> http://www.w3.org/2002/07/owl#NamedIndividual
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, NamedIndividual, 
+      comment: 
+    JClass NetworkService -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#NetworkService
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, NetworkService, 
+      comment: 
+    JClass ApplicationService -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#ApplicationService
+      extends: ApplicationService, org.ontoware.rdfreactor.schema.rdfs.Resource, 
+      comment: 
+    JClass InfrastructureService -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#InfrastructureService
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, InfrastructureService, 
+      comment: 
+    JClass Offering -> http://open-multinet.info/ontology/omn-lifecycle#Offering
+      extends: Offering, org.ontoware.rdfreactor.schema.rdfs.Resource, 
+      comment: 
+      Resource (-1/-1)  -> http://open-multinet.info/ontology/omn#hasResource, types: 'Resource',. Inverse: Resource.
+    JClass Provisioned -> http://open-multinet.info/ontology/omn-lifecycle#Provisioned
+      extends: Provisioned, org.ontoware.rdfreactor.schema.rdfs.Resource, 
+      comment: 
+    JClass VirtualNetworkFunction -> http://open-multinet.info/ontology/omn-domain-nfv#VirtualNetworkFunction
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, VirtualNetworkFunction, 
+      comment: 
+    JClass Video -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#Video
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, Video, 
+      comment: 
+    JClass Instant -> http://www.w3.org/2006/time#Instant
+      extends: Instant, org.ontoware.rdfreactor.schema.rdfs.Resource, 
+      comment: 
+    JClass Interface -> http://open-multinet.info/ontology/omn-resource#Interface
+      extends: Interface, org.ontoware.rdfreactor.schema.rdfs.Resource, 
+      comment: 
+    JClass Resource -> http://open-multinet.info/ontology/omn#Resource
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, Resource, 
+      comment: 
+    JClass Provider -> http://www.gt-arc-com/network/management/ontologies/2017/9/service-information-base#Provider
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, Provider, 
+      comment: 
+    JClass Interval -> http://www.w3.org/2006/time#Interval
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, Interval, 
+      comment: 
+    JClass Node -> http://open-multinet.info/ontology/omn-resource#Node
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, Node, 
+      comment: 
+    JClass Allocated -> http://open-multinet.info/ontology/omn-lifecycle#Allocated
+      extends: org.ontoware.rdfreactor.schema.rdfs.Resource, Allocated, 
+      comment: 
+    JClass VM -> http://open-multinet.info/ontology/omn-domain-nfv#VM
+      extends: VM, org.ontoware.rdfreactor.schema.rdfs.Resource, 
+      comment: 
